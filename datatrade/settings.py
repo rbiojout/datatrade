@@ -26,12 +26,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'), # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
 )
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'build/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
-    }
-}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -57,8 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'webpack_loader',
 ]
 
 MIDDLEWARE = [

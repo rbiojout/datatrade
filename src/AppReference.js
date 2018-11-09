@@ -19,14 +19,14 @@ let store = createStore(dataTradeApp,
   );
 /* eslint-enable */
 
-class App extends Component {
+class AppReference extends Component {
   render() {
     return (
       <Provider store={store}>
         <HashRouter>
           <Switch>
             {/* <Route path="/h" name="Home" component={DefaultLayout} /> */}
-            <Route path='/' render={routeProps => <DefaultLayout {...routeProps} isRestricted={true} />} />
+            <Route path='/' render={routeProps => <DefaultLayout {...routeProps} isRestricted={false} />} />
           </Switch>
         </HashRouter>
       </Provider>
@@ -35,4 +35,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default AppReference;
