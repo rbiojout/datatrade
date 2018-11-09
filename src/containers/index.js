@@ -1,3 +1,4 @@
 import DefaultLayout from './DefaultLayout';
+import FrameworkLayout from './DefaultLayout';
 
-export { DefaultLayout };
+export { FrameworkLayout, DefaultLayout };

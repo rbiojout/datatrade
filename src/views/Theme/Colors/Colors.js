@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { Row, Col } from 'reactstrap'
-import { rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities'
+import { rgbToHex } from '../../../utils/coreui'
 
 class ThemeView extends Component {
   constructor(props) {

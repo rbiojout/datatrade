@@ -20,9 +20,13 @@ import {
   Row,
   Table,
 } from 'reactstrap';
-import Widget03 from '../../views/Widgets/Widget03'
-import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
+import Widget03 from '../../views/Widgets/Widget03';
+import { CustomTooltips } from '../../utils/custom-tooltips';
+//import { CustomTooltips } from '../  @coreui/coreui-plugin-chartjs-custom-tooltips';
+import { getStyle, hexToRgba } from '../../utils/coreui';
+//import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
+
+import ExperimentList from '../../components/ExperimentList';
 
 const brandPrimary = getStyle('--primary')
 const brandSuccess = getStyle('--success')
@@ -481,13 +485,18 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
+          <Col >
+            <ExperimentList/>
+          </Col>
+        </Row>
+        <Row>
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-info">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-right">
                   <ButtonDropdown id='card1' isOpen={this.state.card1} toggle={() => { this.setState({ card1: !this.state.card1 }); }}>
                     <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
+                      <i className="fal fa-cog"></i>
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -511,8 +520,8 @@ class Dashboard extends Component {
               <CardBody className="pb-0">
                 <ButtonGroup className="float-right">
                   <Dropdown id='card2' isOpen={this.state.card2} toggle={() => { this.setState({ card2: !this.state.card2 }); }}>
-                    <DropdownToggle className="p-0" color="transparent">
-                      <i className="icon-location-pin"></i>
+                    <DropdownToggle caret className="p-0" color="transparent">
+                      <i className="fal fa-cog"></i>
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -536,7 +545,7 @@ class Dashboard extends Component {
                 <ButtonGroup className="float-right">
                   <Dropdown id='card3' isOpen={this.state.card3} toggle={() => { this.setState({ card3: !this.state.card3 }); }}>
                     <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
+                      <i className="fal fa-cog"></i>
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -560,7 +569,7 @@ class Dashboard extends Component {
                 <ButtonGroup className="float-right">
                   <ButtonDropdown id='card4' isOpen={this.state.card4} toggle={() => { this.setState({ card4: !this.state.card4 }); }}>
                     <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
+                      <i className="fal fa-cog"></i>
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -588,7 +597,7 @@ class Dashboard extends Component {
                     <div className="small text-muted">November 2015</div>
                   </Col>
                   <Col sm="7" className="d-none d-sm-inline-block">
-                    <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
+                    <Button color="primary" className="float-right"><i className="fa fa-cloud-download"></i></Button>
                     <ButtonToolbar className="float-right" aria-label="Toolbar with button groups">
                       <ButtonGroup className="mr-3" aria-label="First group">
                         <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Day</Button>
@@ -647,7 +656,7 @@ class Dashboard extends Component {
           <Col xs="6" sm="6" lg="3">
             <div className="brand-card">
               <div className="brand-card-header bg-twitter">
-                <i className="fa fa-twitter"></i>
+                <i className="fab fa-twitter"></i>
                 <div className="chart-wrapper">
                   <Line data={makeSocialBoxData(1)} options={socialChartOpts} height={90} />
                 </div>
@@ -668,7 +677,7 @@ class Dashboard extends Component {
           <Col xs="6" sm="6" lg="3">
             <div className="brand-card">
               <div className="brand-card-header bg-linkedin">
-                <i className="fa fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
                 <div className="chart-wrapper">
                   <Line data={makeSocialBoxData(2)} options={socialChartOpts} height={90} />
                 </div>
@@ -689,7 +698,7 @@ class Dashboard extends Component {
           <Col xs="6" sm="6" lg="3">
             <div className="brand-card">
               <div className="brand-card-header bg-google-plus">
-                <i className="fa fa-google-plus"></i>
+                <i className="fab fa-google-plus"></i>
                 <div className="chart-wrapper">
                   <Line data={makeSocialBoxData(3)} options={socialChartOpts} height={90} />
                 </div>
@@ -854,7 +863,7 @@ class Dashboard extends Component {
                     <ul>
                       <div className="progress-group">
                         <div className="progress-group-header">
-                          <i className="icon-user progress-group-icon"></i>
+                          <i className="fa fa-male progress-group-icon"></i>
                           <span className="title">Male</span>
                           <span className="ml-auto font-weight-bold">43%</span>
                         </div>
@@ -864,7 +873,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="progress-group mb-5">
                         <div className="progress-group-header">
-                          <i className="icon-user-female progress-group-icon"></i>
+                          <i className="fa fa-female progress-group-icon"></i>
                           <span className="title">Female</span>
                           <span className="ml-auto font-weight-bold">37%</span>
                         </div>
@@ -874,7 +883,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="progress-group">
                         <div className="progress-group-header">
-                          <i className="icon-globe progress-group-icon"></i>
+                          <i className="fa fa-globe progress-group-icon"></i>
                           <span className="title">Organic Search</span>
                           <span className="ml-auto font-weight-bold">191,235 <span className="text-muted small">(56%)</span></span>
                         </div>
@@ -884,7 +893,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="progress-group">
                         <div className="progress-group-header">
-                          <i className="icon-social-facebook progress-group-icon"></i>
+                          <i className="fab fa-facebook progress-group-icon"></i>
                           <span className="title">Facebook</span>
                           <span className="ml-auto font-weight-bold">51,223 <span className="text-muted small">(15%)</span></span>
                         </div>
@@ -894,7 +903,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="progress-group">
                         <div className="progress-group-header">
-                          <i className="icon-social-twitter progress-group-icon"></i>
+                          <i className="fab fa-twitter progress-group-icon"></i>
                           <span className="title">Twitter</span>
                           <span className="ml-auto font-weight-bold">37,564 <span className="text-muted small">(11%)</span></span>
                         </div>
@@ -904,7 +913,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="progress-group">
                         <div className="progress-group-header">
-                          <i className="icon-social-linkedin progress-group-icon"></i>
+                          <i className="fab fa-linkedin progress-group-icon"></i>
                           <span className="title">LinkedIn</span>
                           <span className="ml-auto font-weight-bold">27,319 <span className="text-muted small">(8%)</span></span>
                         </div>
@@ -960,7 +969,7 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="success" value="50" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
+                      <i className="fab fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -996,7 +1005,7 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="info" value="10" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
+                      <i className="fab fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -1031,7 +1040,7 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="warning" value="74" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
+                      <i className="fab fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -1066,7 +1075,7 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="danger" value="98" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
+                      <i className="fab fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -1101,7 +1110,7 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="info" value="22" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
+                      <i className="fab fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>
@@ -1136,7 +1145,7 @@ class Dashboard extends Component {
                       <Progress className="progress-xs" color="success" value="43" />
                     </td>
                     <td className="text-center">
-                      <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
+                      <i className="fab fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
                       <div className="small text-muted">Last login</div>

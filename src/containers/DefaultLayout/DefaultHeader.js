@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
+import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '../../components/AppParts';
 import logo from '../../assets/img/brand/logo.svg'
 import sygnet from '../../assets/img/brand/sygnet.svg'
 
@@ -40,13 +40,13 @@ class DefaultHeader extends Component {
         </Nav>
         <Nav className="ml-auto" navbar>
           <NavItem className="d-md-down-none">
-            <NavLink href="#"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
+            <NavLink href="#"><i className="fa fa-bell"></i><Badge pill color="danger">5</Badge></NavLink>
           </NavItem>
           <NavItem className="d-md-down-none">
-            <NavLink href="#"><i className="icon-list"></i></NavLink>
+            <NavLink href="#"><i className="fa fa-list-ul"></i></NavLink>
           </NavItem>
           <NavItem className="d-md-down-none">
-            <NavLink href="#"><i className="icon-location-pin"></i></NavLink>
+            <NavLink href="#"><i className="fa fa-map-marker"></i></NavLink>
           </NavItem>
           <AppHeaderDropdown direction="down">
             <DropdownToggle nav>

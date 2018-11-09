@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
 import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
-import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import { CustomTooltips } from '../../utils/custom-tooltips';
+import { ChartComponent } from './ChartComponent';
+import { ChartTypeChooser} from './ChartTypeChooser';
 
 const line = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -155,6 +157,8 @@ class Charts extends Component {
   render() {
     return (
       <div className="animated fadeIn">
+        <ChartTypeChooser/>
+        <ChartComponent/>
         <CardColumns className="cols-2">
           <Card>
             <CardHeader>

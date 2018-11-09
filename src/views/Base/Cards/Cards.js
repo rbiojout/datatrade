@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Badge, Card, CardBody, CardFooter, CardHeader, Col, Row, Collapse, Fade } from 'reactstrap';
-import { AppSwitch } from '@coreui/react'
+import { AppSwitch } from '../../../components/AppParts'
 
 class Cards extends Component {
   constructor(props) {
@@ -379,7 +379,7 @@ class Cards extends Component {
                 <CardHeader>
                   Card actions
                   <div className="card-header-actions">
-                    <a href="#" className="card-header-action btn btn-setting"><i className="icon-settings"></i></a>
+                    <a href="#" className="card-header-action btn btn-setting"><i className="fal fa-cog"></i></a>
                     <a className="card-header-action btn btn-minimize" data-target="#collapseExample" onClick={this.toggle}><i className="icon-arrow-up"></i></a>
                     <a className="card-header-action btn btn-close" onClick={this.toggleFade}><i className="icon-close"></i></a>
                   </div>

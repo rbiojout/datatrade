@@ -29,7 +29,7 @@ STATICFILES_DIRS = (
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'build/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'build/asset-manifest.json'),
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
     }
 }
 
@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [

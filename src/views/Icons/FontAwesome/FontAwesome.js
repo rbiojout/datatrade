@@ -12,25 +12,25 @@ class FontAwesome extends Component {
           <CardBody>
             <Row className="text-center">
               <Col className="fa-hover" xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-address-book fa-lg mt-4"></i><br />address-book
+                <i className="far fa-address-book fa-lg mt-4"></i><br />address-book
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-address-book-o fa-lg mt-4"></i><br />address-book-o
+                <i className="fas fa-address-book fa-lg mt-4"></i><br />address-book
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-address-card fa-lg mt-4"></i><br />address-card
+                <i className="far fa-address-card fa-lg mt-4"></i><br />address-card
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-address-card-o fa-lg mt-4"></i><br />address-card-o
+                <i className="fas fa-address-card fa-lg mt-4"></i><br />address-card
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bandcamp fa-lg mt-4"></i><br />bandcamp
+                <i className="fab fa-bandcamp fa-lg mt-4"></i><br />bandcamp
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
                 <i className="fa fa-bath fa-lg mt-4"></i><br />bath
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bathtub fa-lg mt-4"></i><br />bathtub <span className="text-muted">(alias)</span>
+                <i className="far fa-toilet-paper fa-lg mt-4"></i><br />toilet paper <span className="text-muted">(pro)</span>
               </Col>
               <Col xs="6" sm="4" md="3" lg="2">
                 <i className="fa fa-drivers-license fa-lg mt-4"></i><br />drivers-license <span className="text-muted">(alias)</span>
@@ -2358,108 +2358,108 @@ class FontAwesome extends Component {
             <Row className="text-center">
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bitcoin fa-lg mt-4"></i><br />bitcoin <span className="text-muted">(alias)</span>
+                <i className="fab fa-bitcoin fa-lg mt-4"></i><br />bitcoin <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-btc fa-lg mt-4"></i><br />btc
+                <i className="fab fa-btc fa-lg mt-4"></i><br />btc
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cny fa-lg mt-4"></i><br />cny <span className="text-muted">(alias)</span>
+                <i className="fa fa-yen-sign fa-lg mt-4"></i><br />cny <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-dollar fa-lg mt-4"></i><br />dollar <span className="text-muted">(alias)</span>
+                <i className="fa fa-dollar-sign fa-lg mt-4"></i><br />dollar <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-eur fa-lg mt-4"></i><br />eur
+                <i className="fa fa-euro-sign fa-lg mt-4"></i><br />eur
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-euro fa-lg mt-4"></i><br />euro <span className="text-muted">(alias)</span>
+                <i className="fal fa-euro-sign fa-lg mt-4"></i><br />euro <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gbp fa-lg mt-4"></i><br />gbp
+                <i className="fab fa-gbp fa-lg mt-4"></i><br />gbp
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gg fa-lg mt-4"></i><br />gg
+                <i className="fab fa-gg fa-lg mt-4"></i><br />gg
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gg-circle fa-lg mt-4"></i><br />gg-circle
+                <i className="fab fa-gg-circle fa-lg mt-4"></i><br />gg-circle
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-ils fa-lg mt-4"></i><br />ils
+                <i className="fab fa-ils fa-lg mt-4"></i><br />ils
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-inr fa-lg mt-4"></i><br />inr
+                <i className="fab fa-inr fa-lg mt-4"></i><br />inr
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-jpy fa-lg mt-4"></i><br />jpy
+                <i className="fab fa-jpy fa-lg mt-4"></i><br />jpy
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-krw fa-lg mt-4"></i><br />krw
+                <i className="fab fa-krw fa-lg mt-4"></i><br />krw
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-money fa-lg mt-4"></i><br />money
+                <i className="fab fa-money fa-lg mt-4"></i><br />money
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-rmb fa-lg mt-4"></i><br />rmb <span className="text-muted">(alias)</span>
+                <i className="fab fa-rmb fa-lg mt-4"></i><br />rmb <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-rouble fa-lg mt-4"></i><br />rouble <span className="text-muted">(alias)</span>
+                <i className="fab fa-rouble fa-lg mt-4"></i><br />rouble <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-rub fa-lg mt-4"></i><br />rub
+                <i className="fab fa-rub fa-lg mt-4"></i><br />rub
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-ruble fa-lg mt-4"></i><br />ruble <span className="text-muted">(alias)</span>
+                <i className="fab fa-ruble fa-lg mt-4"></i><br />ruble <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-rupee fa-lg mt-4"></i><br />rupee <span className="text-muted">(alias)</span>
+                <i className="fab fa-rupee fa-lg mt-4"></i><br />rupee <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-shekel fa-lg mt-4"></i><br />shekel <span className="text-muted">(alias)</span>
+                <i className="fab fa-shekel fa-lg mt-4"></i><br />shekel <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-sheqel fa-lg mt-4"></i><br />sheqel <span className="text-muted">(alias)</span>
+                <i className="fab fa-sheqel fa-lg mt-4"></i><br />sheqel <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-try fa-lg mt-4"></i><br />try
+                <i className="fab fa-try fa-lg mt-4"></i><br />try
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-turkish-lira fa-lg mt-4"></i><br />turkish-lira <span
+                <i className="fab fa-turkish-lira fa-lg mt-4"></i><br />turkish-lira <span
                 className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-usd fa-lg mt-4"></i><br />usd
+                <i className="fab fa-usd fa-lg mt-4"></i><br />usd
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-won fa-lg mt-4"></i><br />won <span className="text-muted">(alias)</span>
+                <i className="fab fa-won fa-lg mt-4"></i><br />won <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-yen fa-lg mt-4"></i><br />yen <span className="text-muted">(alias)</span>
+                <i className="fab fa-yen fa-lg mt-4"></i><br />yen <span className="text-muted">(alias)</span>
               </Col>
 
             </Row>
@@ -3004,629 +3004,629 @@ class FontAwesome extends Component {
             <Row className="text-center">
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-500px fa-lg mt-4"></i><br />500px
+                <i className="fab fa-500px fa-lg mt-4"></i><br />500px
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-adn fa-lg mt-4"></i><br />adn
+                <i className="fab fa-adn fa-lg mt-4"></i><br />adn
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-amazon fa-lg mt-4"></i><br />amazon
+                <i className="fab fa-amazon fa-lg mt-4"></i><br />amazon
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-android fa-lg mt-4"></i><br />android
+                <i className="fab fa-android fa-lg mt-4"></i><br />android
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-angellist fa-lg mt-4"></i><br />angellist
+                <i className="fab fa-angellist fa-lg mt-4"></i><br />angellist
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-apple fa-lg mt-4"></i><br />apple
+                <i className="fab fa-apple fa-lg mt-4"></i><br />apple
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-behance fa-lg mt-4"></i><br />behance
+                <i className="fab fa-behance fa-lg mt-4"></i><br />behance
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-behance-square fa-lg mt-4"></i><br />behance-square
+                <i className="fab fa-behance-square fa-lg mt-4"></i><br />behance-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bitbucket fa-lg mt-4"></i><br />bitbucket
+                <i className="fab fa-bitbucket fa-lg mt-4"></i><br />bitbucket
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bitbucket-square fa-lg mt-4"></i><br />bitbucket-square
+                <i className="fab fa-bitbucket-square fa-lg mt-4"></i><br />bitbucket-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bitcoin fa-lg mt-4"></i><br />bitcoin <span className="text-muted">(alias)</span>
+                <i className="fab fa-bitcoin fa-lg mt-4"></i><br />bitcoin <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-black-tie fa-lg mt-4"></i><br />black-tie
+                <i className="fab fa-black-tie fa-lg mt-4"></i><br />black-tie
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bluetooth fa-lg mt-4"></i><br />bluetooth
+                <i className="fab fa-bluetooth fa-lg mt-4"></i><br />bluetooth
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-bluetooth-b fa-lg mt-4"></i><br />bluetooth-b
+                <i className="fab fa-bluetooth-b fa-lg mt-4"></i><br />bluetooth-b
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-btc fa-lg mt-4"></i><br />btc
+                <i className="fab fa-btc fa-lg mt-4"></i><br />btc
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-buysellads fa-lg mt-4"></i><br />buysellads
+                <i className="fab fa-buysellads fa-lg mt-4"></i><br />buysellads
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-amex fa-lg mt-4"></i><br />cc-amex
+                <i className="fab fa-cc-amex fa-lg mt-4"></i><br />cc-amex
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-diners-club fa-lg mt-4"></i><br />cc-diners-club
+                <i className="fab fa-cc-diners-club fa-lg mt-4"></i><br />cc-diners-club
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-discover fa-lg mt-4"></i><br />cc-discover
+                <i className="fab fa-cc-discover fa-lg mt-4"></i><br />cc-discover
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-jcb fa-lg mt-4"></i><br />cc-jcb
+                <i className="fab fa-cc-jcb fa-lg mt-4"></i><br />cc-jcb
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-mastercard fa-lg mt-4"></i><br />cc-mastercard
+                <i className="fab fa-cc-mastercard fa-lg mt-4"></i><br />cc-mastercard
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-paypal fa-lg mt-4"></i><br />cc-paypal
+                <i className="fab fa-cc-paypal fa-lg mt-4"></i><br />cc-paypal
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-stripe fa-lg mt-4"></i><br />cc-stripe
+                <i className="fab fa-cc-stripe fa-lg mt-4"></i><br />cc-stripe
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-cc-visa fa-lg mt-4"></i><br />cc-visa
+                <i className="fab fa-cc-visa fa-lg mt-4"></i><br />cc-visa
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-chrome fa-lg mt-4"></i><br />chrome
+                <i className="fab fa-chrome fa-lg mt-4"></i><br />chrome
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-codepen fa-lg mt-4"></i><br />codepen
+                <i className="fab fa-codepen fa-lg mt-4"></i><br />codepen
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-codiepie fa-lg mt-4"></i><br />codiepie
+                <i className="fab fa-codiepie fa-lg mt-4"></i><br />codiepie
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-connectdevelop fa-lg mt-4"></i><br />connectdevelop
+                <i className="fab fa-connectdevelop fa-lg mt-4"></i><br />connectdevelop
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-contao fa-lg mt-4"></i><br />contao
+                <i className="fab fa-contao fa-lg mt-4"></i><br />contao
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-css3 fa-lg mt-4"></i><br />css3
+                <i className="fab fa-css3 fa-lg mt-4"></i><br />css3
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-dashcube fa-lg mt-4"></i><br />dashcube
+                <i className="fab fa-dashcube fa-lg mt-4"></i><br />dashcube
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-delicious fa-lg mt-4"></i><br />delicious
+                <i className="fab fa-delicious fa-lg mt-4"></i><br />delicious
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-deviantart fa-lg mt-4"></i><br />deviantart
+                <i className="fab fa-deviantart fa-lg mt-4"></i><br />deviantart
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-digg fa-lg mt-4"></i><br />digg
+                <i className="fab fa-digg fa-lg mt-4"></i><br />digg
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-dribbble fa-lg mt-4"></i><br />dribbble
+                <i className="fab fa-dribbble fa-lg mt-4"></i><br />dribbble
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-dropbox fa-lg mt-4"></i><br />dropbox
+                <i className="fab fa-dropbox fa-lg mt-4"></i><br />dropbox
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-drupal fa-lg mt-4"></i><br />drupal
+                <i className="fab fa-drupal fa-lg mt-4"></i><br />drupal
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-edge fa-lg mt-4"></i><br />edge
+                <i className="fab fa-edge fa-lg mt-4"></i><br />edge
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-empire fa-lg mt-4"></i><br />empire
+                <i className="fab fa-empire fa-lg mt-4"></i><br />empire
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-expeditedssl fa-lg mt-4"></i><br />expeditedssl
+                <i className="fab fa-expeditedssl fa-lg mt-4"></i><br />expeditedssl
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-facebook fa-lg mt-4"></i><br />facebook
+                <i className="fab fa-facebook fa-lg mt-4"></i><br />facebook
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-facebook-f fa-lg mt-4"></i><br />facebook-f <span
+                <i className="fab fa-facebook-f fa-lg mt-4"></i><br />facebook-f <span
                 className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-facebook-official fa-lg mt-4"></i><br />facebook-official
+                <i className="fab fa-facebook-official fa-lg mt-4"></i><br />facebook-official
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-facebook-square fa-lg mt-4"></i><br />facebook-square
+                <i className="fab fa-facebook-square fa-lg mt-4"></i><br />facebook-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-firefox fa-lg mt-4"></i><br />firefox
+                <i className="fab fa-firefox fa-lg mt-4"></i><br />firefox
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-flickr fa-lg mt-4"></i><br />flickr
+                <i className="fab fa-flickr fa-lg mt-4"></i><br />flickr
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-fonticons fa-lg mt-4"></i><br />fonticons
+                <i className="fab fa-fonticons fa-lg mt-4"></i><br />fonticons
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-fort-awesome fa-lg mt-4"></i><br />fort-awesome
+                <i className="fab fa-fort-awesome fa-lg mt-4"></i><br />fort-awesome
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-forumbee fa-lg mt-4"></i><br />forumbee
+                <i className="fab fa-forumbee fa-lg mt-4"></i><br />forumbee
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-foursquare fa-lg mt-4"></i><br />foursquare
+                <i className="fab fa-foursquare fa-lg mt-4"></i><br />foursquare
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-ge fa-lg mt-4"></i><br />ge <span className="text-muted">(alias)</span>
+                <i className="fab fa-ge fa-lg mt-4"></i><br />ge <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-get-pocket fa-lg mt-4"></i><br />get-pocket
+                <i className="fab fa-get-pocket fa-lg mt-4"></i><br />get-pocket
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gg fa-lg mt-4"></i><br />gg
+                <i className="fab fa-gg fa-lg mt-4"></i><br />gg
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gg-circle fa-lg mt-4"></i><br />gg-circle
+                <i className="fab fa-gg-circle fa-lg mt-4"></i><br />gg-circle
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-git fa-lg mt-4"></i><br />git
+                <i className="fab fa-git fa-lg mt-4"></i><br />git
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-git-square fa-lg mt-4"></i><br />git-square
+                <i className="fab fa-git-square fa-lg mt-4"></i><br />git-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-github fa-lg mt-4"></i><br />github
+                <i className="fab fa-github fa-lg mt-4"></i><br />github
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-github-alt fa-lg mt-4"></i><br />github-alt
+                <i className="fab fa-github-alt fa-lg mt-4"></i><br />github-alt
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-github-square fa-lg mt-4"></i><br />github-square
+                <i className="fab fa-github-square fa-lg mt-4"></i><br />github-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gittip fa-lg mt-4"></i><br />gittip <span className="text-muted">(alias)</span>
+                <i className="fab fa-gittip fa-lg mt-4"></i><br />gittip <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-google fa-lg mt-4"></i><br />google
+                <i className="fab fa-google fa-lg mt-4"></i><br />google
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-google-plus fa-lg mt-4"></i><br />google-plus
+                <i className="fab fa-google-plus fa-lg mt-4"></i><br />google-plus
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-google-plus-square fa-lg mt-4"></i><br />google-plus-square
+                <i className="fab fa-google-plus-square fa-lg mt-4"></i><br />google-plus-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-google-wallet fa-lg mt-4"></i><br />google-wallet
+                <i className="fab fa-google-wallet fa-lg mt-4"></i><br />google-wallet
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-gratipay fa-lg mt-4"></i><br />gratipay
+                <i className="fab fa-gratipay fa-lg mt-4"></i><br />gratipay
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-hacker-news fa-lg mt-4"></i><br />hacker-news
+                <i className="fab fa-hacker-news fa-lg mt-4"></i><br />hacker-news
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-houzz fa-lg mt-4"></i><br />houzz
+                <i className="fab fa-houzz fa-lg mt-4"></i><br />houzz
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-html5 fa-lg mt-4"></i><br />html5
+                <i className="fab fa-html5 fa-lg mt-4"></i><br />html5
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-instagram fa-lg mt-4"></i><br />instagram
+                <i className="fab fa-instagram fa-lg mt-4"></i><br />instagram
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-internet-explorer fa-lg mt-4"></i><br />internet-explorer
+                <i className="fab fa-internet-explorer fa-lg mt-4"></i><br />internet-explorer
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-ioxhost fa-lg mt-4"></i><br />ioxhost
+                <i className="fab fa-ioxhost fa-lg mt-4"></i><br />ioxhost
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-joomla fa-lg mt-4"></i><br />joomla
+                <i className="fab fa-joomla fa-lg mt-4"></i><br />joomla
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-jsfiddle fa-lg mt-4"></i><br />jsfiddle
+                <i className="fab fa-jsfiddle fa-lg mt-4"></i><br />jsfiddle
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-lastfm fa-lg mt-4"></i><br />lastfm
+                <i className="fab fa-lastfm fa-lg mt-4"></i><br />lastfm
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-lastfm-square fa-lg mt-4"></i><br />lastfm-square
+                <i className="fab fa-lastfm-square fa-lg mt-4"></i><br />lastfm-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-leanpub fa-lg mt-4"></i><br />leanpub
+                <i className="fab fa-leanpub fa-lg mt-4"></i><br />leanpub
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-linkedin fa-lg mt-4"></i><br />linkedin
+                <i className="fab fa-linkedin fa-lg mt-4"></i><br />linkedin
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-linkedin-square fa-lg mt-4"></i><br />linkedin-square
+                <i className="fab fa-linkedin-square fa-lg mt-4"></i><br />linkedin-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-linux fa-lg mt-4"></i><br />linux
+                <i className="fab fa-linux fa-lg mt-4"></i><br />linux
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-maxcdn fa-lg mt-4"></i><br />maxcdn
+                <i className="fab fa-maxcdn fa-lg mt-4"></i><br />maxcdn
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-meanpath fa-lg mt-4"></i><br />meanpath
+                <i className="fab fa-meanpath fa-lg mt-4"></i><br />meanpath
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-medium fa-lg mt-4"></i><br />medium
+                <i className="fab fa-medium fa-lg mt-4"></i><br />medium
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-mixcloud fa-lg mt-4"></i><br />mixcloud
+                <i className="fab fa-mixcloud fa-lg mt-4"></i><br />mixcloud
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-modx fa-lg mt-4"></i><br />modx
+                <i className="fab fa-modx fa-lg mt-4"></i><br />modx
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-odnoklassniki fa-lg mt-4"></i><br />odnoklassniki
+                <i className="fab fa-odnoklassniki fa-lg mt-4"></i><br />odnoklassniki
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-odnoklassniki-square fa-lg mt-4"></i><br />odnoklassniki-square
+                <i className="fab fa-odnoklassniki-square fa-lg mt-4"></i><br />odnoklassniki-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-opencart fa-lg mt-4"></i><br />opencart
+                <i className="fab fa-opencart fa-lg mt-4"></i><br />opencart
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-openid fa-lg mt-4"></i><br />openid
+                <i className="fab fa-openid fa-lg mt-4"></i><br />openid
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-opera fa-lg mt-4"></i><br />opera
+                <i className="fab fa-opera fa-lg mt-4"></i><br />opera
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-optin-monster fa-lg mt-4"></i><br />optin-monster
+                <i className="fab fa-optin-monster fa-lg mt-4"></i><br />optin-monster
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-pagelines fa-lg mt-4"></i><br />pagelines
+                <i className="fab fa-pagelines fa-lg mt-4"></i><br />pagelines
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-paypal fa-lg mt-4"></i><br />paypal
+                <i className="fab fa-paypal fa-lg mt-4"></i><br />paypal
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-pied-piper fa-lg mt-4"></i><br />pied-piper
+                <i className="fab fa-pied-piper fa-lg mt-4"></i><br />pied-piper
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-pied-piper-alt fa-lg mt-4"></i><br />pied-piper-alt
+                <i className="fab fa-pied-piper-alt fa-lg mt-4"></i><br />pied-piper-alt
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-pinterest fa-lg mt-4"></i><br />pinterest
+                <i className="fab fa-pinterest fa-lg mt-4"></i><br />pinterest
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-pinterest-p fa-lg mt-4"></i><br />pinterest-p
+                <i className="fab fa-pinterest-p fa-lg mt-4"></i><br />pinterest-p
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-pinterest-square fa-lg mt-4"></i><br />pinterest-square
+                <i className="fab fa-pinterest-square fa-lg mt-4"></i><br />pinterest-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-product-hunt fa-lg mt-4"></i><br />product-hunt
+                <i className="fab fa-product-hunt fa-lg mt-4"></i><br />product-hunt
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-qq fa-lg mt-4"></i><br />qq
+                <i className="fab fa-qq fa-lg mt-4"></i><br />qq
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-ra fa-lg mt-4"></i><br />ra <span className="text-muted">(alias)</span>
+                <i className="fab fa-ra fa-lg mt-4"></i><br />ra <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-rebel fa-lg mt-4"></i><br />rebel
+                <i className="fab fa-rebel fa-lg mt-4"></i><br />rebel
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-reddit fa-lg mt-4"></i><br />reddit
+                <i className="fab fa-reddit fa-lg mt-4"></i><br />reddit
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-reddit-alien fa-lg mt-4"></i><br />reddit-alien
+                <i className="fab fa-reddit-alien fa-lg mt-4"></i><br />reddit-alien
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-reddit-square fa-lg mt-4"></i><br />reddit-square
+                <i className="fab fa-reddit-square fa-lg mt-4"></i><br />reddit-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-renren fa-lg mt-4"></i><br />renren
+                <i className="fab fa-renren fa-lg mt-4"></i><br />renren
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-safari fa-lg mt-4"></i><br />safari
+                <i className="fab fa-safari fa-lg mt-4"></i><br />safari
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-scribd fa-lg mt-4"></i><br />scribd
+                <i className="fab fa-scribd fa-lg mt-4"></i><br />scribd
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-sellsy fa-lg mt-4"></i><br />sellsy
+                <i className="fab fa-sellsy fa-lg mt-4"></i><br />sellsy
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-share-alt fa-lg mt-4"></i><br />share-alt
+                <i className="fab fa-share-alt fa-lg mt-4"></i><br />share-alt
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-share-alt-square fa-lg mt-4"></i><br />share-alt-square
+                <i className="fab fa-share-alt-square fa-lg mt-4"></i><br />share-alt-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-shirtsinbulk fa-lg mt-4"></i><br />shirtsinbulk
+                <i className="fab fa-shirtsinbulk fa-lg mt-4"></i><br />shirtsinbulk
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-simplybuilt fa-lg mt-4"></i><br />simplybuilt
+                <i className="fab fa-simplybuilt fa-lg mt-4"></i><br />simplybuilt
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-skyatlas fa-lg mt-4"></i><br />skyatlas
+                <i className="fab fa-skyatlas fa-lg mt-4"></i><br />skyatlas
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-skype fa-lg mt-4"></i><br />skype
+                <i className="fab fa-skype fa-lg mt-4"></i><br />skype
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-slack fa-lg mt-4"></i><br />slack
+                <i className="fab fa-slack fa-lg mt-4"></i><br />slack
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-slideshare fa-lg mt-4"></i><br />slideshare
+                <i className="fab fa-slideshare fa-lg mt-4"></i><br />slideshare
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-soundcloud fa-lg mt-4"></i><br />soundcloud
+                <i className="fab fa-soundcloud fa-lg mt-4"></i><br />soundcloud
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-spotify fa-lg mt-4"></i><br />spotify
+                <i className="fab fa-spotify fa-lg mt-4"></i><br />spotify
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-stack-exchange fa-lg mt-4"></i><br />stack-exchange
+                <i className="fab fa-stack-exchange fa-lg mt-4"></i><br />stack-exchange
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-stack-overflow fa-lg mt-4"></i><br />stack-overflow
+                <i className="fab fa-stack-overflow fa-lg mt-4"></i><br />stack-overflow
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-steam fa-lg mt-4"></i><br />steam
+                <i className="fab fa-steam fa-lg mt-4"></i><br />steam
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-steam-square fa-lg mt-4"></i><br />steam-square
+                <i className="fab fa-steam-square fa-lg mt-4"></i><br />steam-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-stumbleupon fa-lg mt-4"></i><br />stumbleupon
+                <i className="fab fa-stumbleupon fa-lg mt-4"></i><br />stumbleupon
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-stumbleupon-circle fa-lg mt-4"></i><br />stumbleupon-circle
+                <i className="fab fa-stumbleupon-circle fa-lg mt-4"></i><br />stumbleupon-circle
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-tencent-weibo fa-lg mt-4"></i><br />tencent-weibo
+                <i className="fab fa-tencent-weibo fa-lg mt-4"></i><br />tencent-weibo
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-trello fa-lg mt-4"></i><br />trello
+                <i className="fab fa-trello fa-lg mt-4"></i><br />trello
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-tripadvisor fa-lg mt-4"></i><br />tripadvisor
+                <i className="fab fa-tripadvisor fa-lg mt-4"></i><br />tripadvisor
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-tumblr fa-lg mt-4"></i><br />tumblr
+                <i className="fab fa-tumblr fa-lg mt-4"></i><br />tumblr
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-tumblr-square fa-lg mt-4"></i><br />tumblr-square
+                <i className="fab fa-tumblr-square fa-lg mt-4"></i><br />tumblr-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-twitch fa-lg mt-4"></i><br />twitch
+                <i className="fab fa-twitch fa-lg mt-4"></i><br />twitch
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-twitter fa-lg mt-4"></i><br />twitter
+                <i className="fab fa-twitter fa-lg mt-4"></i><br />twitter
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-twitter-square fa-lg mt-4"></i><br />twitter-square
+                <i className="fab fa-twitter-square fa-lg mt-4"></i><br />twitter-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-usb fa-lg mt-4"></i><br />usb
+                <i className="fab fa-usb fa-lg mt-4"></i><br />usb
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-viacoin fa-lg mt-4"></i><br />viacoin
+                <i className="fab fa-viacoin fa-lg mt-4"></i><br />viacoin
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-vimeo fa-lg mt-4"></i><br />vimeo
+                <i className="fab fa-vimeo fa-lg mt-4"></i><br />vimeo
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-vimeo-square fa-lg mt-4"></i><br />vimeo-square
+                <i className="fab fa-vimeo-square fa-lg mt-4"></i><br />vimeo-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-vine fa-lg mt-4"></i><br />vine
+                <i className="fab fa-vine fa-lg mt-4"></i><br />vine
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-vk fa-lg mt-4"></i><br />vk
+                <i className="fab fa-vk fa-lg mt-4"></i><br />vk
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-wechat fa-lg mt-4"></i><br />wechat <span className="text-muted">(alias)</span>
+                <i className="fab fa-wechat fa-lg mt-4"></i><br />wechat <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-weibo fa-lg mt-4"></i><br />weibo
+                <i className="fab fa-weibo fa-lg mt-4"></i><br />weibo
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-weixin fa-lg mt-4"></i><br />weixin
+                <i className="fab fa-weixin fa-lg mt-4"></i><br />weixin
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-whatsapp fa-lg mt-4"></i><br />whatsapp
+                <i className="fab fa-whatsapp fa-lg mt-4"></i><br />whatsapp
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-wikipedia-w fa-lg mt-4"></i><br />wikipedia-w
+                <i className="fab fa-wikipedia-w fa-lg mt-4"></i><br />wikipedia-w
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-windows fa-lg mt-4"></i><br />windows
+                <i className="fab fa-windows fa-lg mt-4"></i><br />windows
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-wordpress fa-lg mt-4"></i><br />wordpress
+                <i className="fab fa-wordpress fa-lg mt-4"></i><br />wordpress
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-xing fa-lg mt-4"></i><br />xing
+                <i className="fab fa-xing fa-lg mt-4"></i><br />xing
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-xing-square fa-lg mt-4"></i><br />xing-square
+                <i className="fab fa-xing-square fa-lg mt-4"></i><br />xing-square
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-y-combinator fa-lg mt-4"></i><br />y-combinator
+                <i className="fab fa-y-combinator fa-lg mt-4"></i><br />y-combinator
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-y-combinator-square fa-lg mt-4"></i><br />y-combinator-square <span
+                <i className="fab fa-y-combinator-square fa-lg mt-4"></i><br />y-combinator-square <span
                 className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-yahoo fa-lg mt-4"></i><br />yahoo
+                <i className="fab fa-yahoo fa-lg mt-4"></i><br />yahoo
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-yc fa-lg mt-4"></i><br />yc <span className="text-muted">(alias)</span>
+                <i className="fab fa-yc fa-lg mt-4"></i><br />yc <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-yc-square fa-lg mt-4"></i><br />yc-square <span className="text-muted">(alias)</span>
+                <i className="fab fa-yc-square fa-lg mt-4"></i><br />yc-square <span className="text-muted">(alias)</span>
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-yelp fa-lg mt-4"></i><br />yelp
+                <i className="fab fa-yelp fa-lg mt-4"></i><br />yelp
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-youtube fa-lg mt-4"></i><br />youtube
+                <i className="fab fa-youtube fa-lg mt-4"></i><br />youtube
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-youtube-play fa-lg mt-4"></i><br />youtube-play
+                <i className="fab fa-youtube-play fa-lg mt-4"></i><br />youtube-play
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-youtube-square fa-lg mt-4"></i><br />youtube-square
+                <i className="fab fa-youtube-square fa-lg mt-4"></i><br />youtube-square
               </Col>
             </Row>
             <Alert color="success" className="mt-4">
@@ -3659,7 +3659,7 @@ class FontAwesome extends Component {
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-heart-o fa-lg mt-4"></i><br />heart-o
+                <i className="far fa-heart fa-lg mt-4"></i><br />heart-o
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
@@ -3667,7 +3667,7 @@ class FontAwesome extends Component {
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-hospital-o fa-lg mt-4"></i><br />hospital-o
+                <i className="far fa-hospital fa-lg mt-4"></i><br />hospital-o
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
