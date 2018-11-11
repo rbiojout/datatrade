@@ -46,6 +46,19 @@ for( var key in entries) {
   entries[key] = webpack_entries.concat(entries[key]);
 }
 
+// adjust output also to have multiple outputs
+// the file names are important and must be present
+const outputs_HtmlWebpackPlugin = Object.keys(paths.entries).map(function(id) {
+  return new HtmlWebpackPlugin({
+      chunks: ["common", id],
+      filename: id + ".html",
+      template: "!!html-webpack-plugin/lib/loader.js!./public/" + id + ".html",
+      inject: "body",
+    });
+  })
+
+console.log(outputs_HtmlWebpackPlugin);
+
 // common function to get style loaders
 const getStyleLoaders = (cssOptions, preProcessor) => {
   const loaders = [
@@ -351,12 +364,16 @@ module.exports = {
       // Make sure to add the new loader(s) before the "file" loader.
     ],
   },
-  plugins: [
+  plugins: outputs_HtmlWebpackPlugin.concat([
     // Generates an `index.html` file with the <script> injected.
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: paths.appHtml,
-    }),
+    // cf https://github.com/jantimon/html-webpack-plugin/issues/218
+    
+    //new HtmlWebpackPlugin({
+      //template: paths.appHtml,
+      //inject: true,
+      
+    //}),
+    
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
@@ -394,7 +411,7 @@ module.exports = {
     }),
     // ADDED
     new BundleTracker({path: paths.statsRoot, filename: 'webpack-stats.dev.json'}),
-  ],
+  ]),
 
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

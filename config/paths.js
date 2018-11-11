@@ -42,7 +42,7 @@ function getServedPath(appPackageJson) {
 // make several entry points, with names to be referenced
 // some chunks are available
 const entries = {
-  main: resolveApp('src/index.js'),
+  index: resolveApp('src/index.js'),
   reference: resolveApp('src/reference.js'),
 };
 

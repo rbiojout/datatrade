@@ -3,7 +3,8 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunkMiddleware from 'redux-thunk';
 import dataTradeApp from "./reducers";
 
 // Containers
@@ -16,6 +17,7 @@ import { DefaultLayout } from './containers';
 /* eslint-disable no-underscore-dangle */
 let store = createStore(dataTradeApp,
   //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(thunkMiddleware),
   );
 /* eslint-enable */
 

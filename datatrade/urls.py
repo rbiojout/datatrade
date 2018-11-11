@@ -23,6 +23,7 @@ urlpatterns = [
     path('exchange/', include('exchange.urls')),
     path('simulation', include('simulation.urls')),
     path('admin/', admin.site.urls),
+    path('api/', include('api.v1.urls')),
     url('reference/', TemplateView.as_view(template_name="reference.html")),
     url('app/', TemplateView.as_view(template_name="app.html")),
 ]

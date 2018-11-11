@@ -11,6 +11,16 @@ export default {
       },
     },
     {
+      restricted: false,
+      name: 'Data',
+      url: '/data',
+      icon: 'far fa-tachometer',
+      badge: {
+        variant: 'success',
+        text: 'NEW',
+      },
+    },
+    {
       restricted: true,
       title: true,
       name: 'Theme',
