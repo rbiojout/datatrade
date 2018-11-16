@@ -157,8 +157,7 @@ class Charts extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <ChartTypeChooser/>
-        <ChartComponent/>
+        <ChartTypeChooser tickerSymbol='AAPL'/>
         <CardColumns className="cols-2">
           <Card>
             <CardHeader>

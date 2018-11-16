@@ -2,7 +2,7 @@
 import { tsvParse, csvParse } from  "d3-dsv";
 import { timeParse } from "d3-time-format";
 
-function parseData(parse) {
+export function parseData(parse) {
 	return function(d) {
 		d.date = parse(d.date);
 		d.open = +d.open;
@@ -15,14 +15,21 @@ function parseData(parse) {
 	};
 }
 
-const parseDate = timeParse("%Y-%m-%d");
+export const parseDate = timeParse("%Y-%m-%d");
 
-export function getData() {
+export function getDataOld() {
 	const promiseMSFT = fetch("https://cdn.rawgit.com/rrag/react-stockcharts/master/docs/data/MSFT.tsv")
 		.then(response => response.text())
 		.then(data => tsvParse(data, parseData(parseDate)))
 	return promiseMSFT;
 }
+
+export function getData() {
+    return fetch(`http://localhost:8000/api/v1/ticksByTicker/AAPL`)
+      .then(response => response.json())
+      .then(data => data.map(parseData(parseDate)))
+}
+
 
 const parseDateTime = timeParse("%Y-%m-%d %H:%M:%S");
 

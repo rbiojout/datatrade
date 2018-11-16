@@ -1,13 +1,14 @@
 import { combineReducers } from 'redux';
 import experiments from "./experiments";
 import templates from './templates';
-import {ticksByTicker, selectedTicker} from './tickers';
+import {ticksByTicker, tickers, selectedTicker} from './tickers';
 
-const dataTradeApp = combineReducers({
+const rootReducer = combineReducers({
   experiments,
   templates,
+  tickers, 
   ticksByTicker,
   selectedTicker
 })
 
-export default dataTradeApp;
+export default rootReducer ;

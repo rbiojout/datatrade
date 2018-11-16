@@ -1,5 +1,6 @@
 import fetch from 'cross-fetch'
 
+import { timeParse } from "d3-time-format";
 
 export const REQUEST_TICKS = 'REQUEST_TICKS'
 export const RECEIVE_TICKS = 'RECEIVE_TICKS'
@@ -9,6 +10,24 @@ export const SELECT_TICKER = 'SELECT_TICKER'
 export const INVALIDATE_TICKER = 'INVALIDATE_TICKER'
 
 
+const parseDate = timeParse("%Y-%m-%d");
+
+function parseData(parse) {
+  return function(d) {
+		d.date = parse(d.date);
+		d.open = +d.open;
+		d.high = +d.high;
+		d.low = +d.low;
+		d.close = +d.close;
+		d.volume = +d.volume;
+
+		return d;
+	};
+}
+
+
+
+// Tickers
 export function requestTickers() {
   return {
     type: REQUEST_TICKERS,
@@ -18,29 +37,29 @@ export function requestTickers() {
 function receiveTickers(json) {
   return {
     type: RECEIVE_TICKERS,
-    tickers: json.data.children.map(child => child.data),
+    tickers: json,
+    //tickers: json.data.children.map(child => child.data),
     receivedAt: Date.now()
   }
 }
 
-export function selectTicker(tickerId) {
+export function selectTicker(tickerSymbol) {
   return {
     type: SELECT_TICKER,
-    tickerId
+    tickerSymbol
   }
 }
 
-export function invalidateTicker(tickerId) {
+export function invalidateTicker(tickerSymbol) {
   return {
     type: INVALIDATE_TICKER,
-    tickerId
+    tickerSymbol
   }
 }
 
-// Tickers
-function fetchTickers() {
+export function fetchTickers() {
   return dispatch => {
-    dispatch(requestTicks())
+    dispatch(requestTickers())
     return fetch('http://localhost:8000/api/v1/tickers.json')
       .then(response => response.json())
       .then(json => dispatch(receiveTickers(json)))
@@ -54,7 +73,7 @@ function shouldFetchTickers(state) {
   } else if (tickers.isFetching) {
     return false
   } else {
-    return tickers.didInvalidate
+    return true
   }
 }
 
@@ -75,36 +94,41 @@ export function fetchTickersIfNeeded() {
 }
 
 
-function requestTicks(tickerId) {
+// Ticks
+function requestTicks(tickerSymbol) {
   return {
     type: REQUEST_TICKS,
-    tickerId
+    tickerSymbol
   }
 }
 
-function receiveTicks(tickerId, json) {
+function receiveTicks(tickerSymbol, json) {
   return {
     type: RECEIVE_TICKS,
-    tickerId,
-    items: json.data.children.map(child => child.data),
+    tickerSymbol,
+    items: json,
     receivedAt: Date.now()
   }
 }
 
 
-// Ticks
-function fetchTicks(tickerId) {
+export function fetchTicks(tickerSymbol) {
   return dispatch => {
-    dispatch(requestTicks())
-    return fetch('http://localhost:8000/api/v1/${tickerId}/tickers.json')
+    dispatch(requestTicks(tickerSymbol))
+    return fetch(`http://localhost:8000/api/v1/ticksByTicker/${tickerSymbol}`)
       .then(response => response.json())
-      .then(json => dispatch(receiveTicks(tickerId, json)))
+      .then(data => data.map(parseData(parseDate)))
+      .then(json => dispatch(receiveTicks(tickerSymbol, json)))
+      
   }
 }
 
 
-function shouldFetchTicks(state, tickerId) {
-  const ticks = state.ticksBytickerId[tickerId]
+function shouldFetchTicks(state, tickerSymbol) {
+  if (!state.ticksByticker){
+    return true
+  }
+  const ticks = state.ticksByticker[tickerSymbol]
   if (!ticks) {
     return true
   } else if (ticks.isFetching) {
@@ -114,32 +138,18 @@ function shouldFetchTicks(state, tickerId) {
   }
 }
 
-export function fetchTicksIfNeeded(tickerId) {
+export function fetchTicksIfNeeded(tickerSymbol) {
   // Note that the function also receives getState()
   // which lets you choose what to dispatch next.
   // This is useful for avoiding a network request if
   // a cached value is already available.
   return (dispatch, getState) => {
-    if (shouldFetchTicks(getState(), tickerId)) {
+    if (shouldFetchTicks(getState(), tickerSymbol)) {
       // Dispatch a thunk from thunk!
-      return dispatch(fetchTicks(tickerId))
+      return dispatch(fetchTicks(tickerSymbol))
     } else {
       // Let the calling code know there's nothing to wait for.
       return Promise.resolve()
     }
-  }
-}
-
-export const fetchTickers2 = () => {
-  return dispatch => {
-    let headers = {"Content-Type": "application/json"};
-    return fetch("/api/v1/tickers/", {headers, })
-      .then(res => res.json())
-      .then(tickers => {
-        return dispatch({
-          type: 'FETCH_TICKERS',
-          tickers
-        })
-      })
   }
 }

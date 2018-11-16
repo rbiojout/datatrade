@@ -14,7 +14,7 @@ const paths = require('./paths');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 
-// ADDED
+// ADDED for django-webpack
 const BundleTracker = require('webpack-bundle-tracker');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -56,8 +56,6 @@ const outputs_HtmlWebpackPlugin = Object.keys(paths.entries).map(function(id) {
       inject: "body",
     });
   })
-
-console.log(outputs_HtmlWebpackPlugin);
 
 // common function to get style loaders
 const getStyleLoaders = (cssOptions, preProcessor) => {
@@ -135,9 +133,9 @@ module.exports = {
     // served by WebpackDevServer in development. This is the JS bundle
     // containing code from all our entry points, and the Webpack runtime.
     // filename: 'static/js/bundle.js',
-    filename: 'static/js/[name].entry.js',
+    filename: 'static/js/[name].[hash].js',
     // There are also additional JS chunk files if you use code splitting.
-    chunkFilename: 'static/js/[name].chunk.js',
+    chunkFilename: 'static/js/[name].[hash].chunk.js',
     // This is the URL that app is served from. We use "/" in development.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
@@ -215,7 +213,7 @@ module.exports = {
             options: {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -248,7 +246,7 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
-              
+
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),
@@ -288,7 +286,7 @@ module.exports = {
               cacheDirectory: true,
               // Don't waste time on Gzipping the cache
               cacheCompression: false,
-              
+
               // If an error happens in a package, it's possible to be
               // because it was compiled. Thus, we don't want the browser
               // debugger to show the original code. Instead, the code
@@ -367,13 +365,13 @@ module.exports = {
   plugins: outputs_HtmlWebpackPlugin.concat([
     // Generates an `index.html` file with the <script> injected.
     // cf https://github.com/jantimon/html-webpack-plugin/issues/218
-    
+
     //new HtmlWebpackPlugin({
       //template: paths.appHtml,
       //inject: true,
-      
+
     //}),
-    
+
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
@@ -409,8 +407,8 @@ module.exports = {
       fileName: 'asset-manifest.json',
       publicPath: publicPath,
     }),
-    // ADDED
-    new BundleTracker({path: paths.statsRoot, filename: 'webpack-stats.dev.json'}),
+    // ADDED for django-webpack
+    new BundleTracker({path: paths.statsRoot, filename: 'webpack-stats.json'}),
   ]),
 
   // Some libraries import Node modules but don't use them in the browser.

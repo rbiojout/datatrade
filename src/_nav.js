@@ -188,7 +188,7 @@ export default {
       ],
     },
     {
-      restricted: true,
+      restricted: false,
       name: 'Charts',
       url: '/charts',
       icon: 'fal fa-chart-pie',

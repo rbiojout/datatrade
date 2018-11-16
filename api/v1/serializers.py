@@ -14,4 +14,4 @@ class TickerSerializer(serializers.ModelSerializer):
 class TickSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tick
-        fields = ('id', 'date', 'open', 'high', 'low', 'close', 'volume')
+        fields = ('date', 'open', 'high', 'low', 'close', 'volume', 'id' )

@@ -1,13 +1,19 @@
 <!DOCTYPE html>
+
+{% load static %}
+
+{% load render_bundle from webpack_loader %}
+
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Test Project</title>
+    {% render_bundle 'index' 'css' %}
   </head>
   <body>
     <div id="reference">
     </div>
-    <script src="http://localhost:3000/static/js/reference.entry.js"></script>
+    {% render_bundle 'reference' 'js' %}
   </body>
 </html>

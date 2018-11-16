@@ -189,7 +189,6 @@ module.exports = {
     // Automatically split vendor and commons
     // https://twitter.com/wSokra/status/969633336732905474
     // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
-    /*
     splitChunks: {
       chunks: 'all',
       name: false,
@@ -197,7 +196,6 @@ module.exports = {
     // Keep the runtime chunk seperated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
     runtimeChunk: true,
-    */
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -420,7 +418,6 @@ module.exports = {
     ],
   },
   plugins: [
-    /*
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
@@ -447,7 +444,6 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
-    */
     // This gives some necessary context to module not found errors, such as
     // the requesting resource.
     new ModuleNotFoundPlugin(paths.appPath),

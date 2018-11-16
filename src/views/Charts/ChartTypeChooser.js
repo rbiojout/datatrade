@@ -5,7 +5,11 @@ import { CandleStickChart } from './stockcharts/CandleStickChart';
 import { LineAndScatterChartGrid } from './stockcharts/LineAndScatterChartGrid';
 import { CandleStickChartForDiscontinuousIntraDay } from './stockcharts/CandleStickChartForDiscontinuousIntraDay';
 
-import { getData } from "./utils"
+import { FormGroup, Label, Col, Input } from 'reactstrap';
+
+import { fetchTicks } from '../../actions/tickers';
+
+import { getData, parseDate, parseData } from "./utils"
 
 class ChartTypeChooser extends Component {
 	constructor(props) {
@@ -18,12 +22,27 @@ class ChartTypeChooser extends Component {
 		this.handleChartTypeChange = this.handleChartTypeChange.bind(this);
     }
     componentDidMount() {
-		getData().then(data => {
-			this.setState({ data: data })
-		})
-	}
+		//getData().then(data => {
+		//	this.setState({ data: data })
+        //})
+        this.handleTickerSymbol(this.props.tickerSymbol)
+    }
+    
+    componentDidUpdate(prevProps) {
+        if (this.props.tickerSymbol !== prevProps.tickerSymbol) {
+            this.handleTickerSymbol(this.props.tickerSymbol)
+        }
+      }
+
+    handleTickerSymbol(tickerSymbol) {
+        fetch(`http://localhost:8000/api/v1/ticksByTicker/${tickerSymbol}`)
+            .then(response => response.json())
+            .then(data => data.map(parseData(parseDate)))
+            .then(data => {
+                this.setState({ data: data }); })
+    }
+
 	handleChartTypeChange(e) {
-        // console.log(e.target.value);
         let chart;
         switch (this.state.chartType) {
             case 'AreaChart':
@@ -41,11 +60,10 @@ class ChartTypeChooser extends Component {
 	render() {
         if (this.state.data == null) {
 			return <div>Loading...</div>
-		}
+        }
         //let chart = <AreaChart style='hybrid' width='400' ratio='1' data={this.state.data}/>;
         //let chart = <LineAndScatterChartGrid style='hybrid' data={this.state.data}/>;
         let chart = <CandleStickChart style='hybrid' data={this.state.data}/>;
-        console.log(`this.state.chartType ${this.state.chartType}`);
         switch (this.state.chartType) {
             case 'AreaChart':
                 chart = <AreaChart style='hybrid' data={this.state.data}/>;
@@ -60,24 +78,29 @@ class ChartTypeChooser extends Component {
                 chart = <CandleStickChartForDiscontinuousIntraDay style='hybrid' data={this.state.data}/>
                 break;
         }
-        console.log(`chart ${chart}`);
-		return (
+        return (
+            
+                
 			<div>
-				<label>ChartType: </label>
-				<select name="chartType" id="chartType" onChange={this.handleChartTypeChange} value={this.state.chartType} >
-					<option value="AreaChart">AreaChart</option>
+				<FormGroup row>
+                <Label for="chartType" sm={2}>Chart Type</Label>
+                <Col sm={10}>
+                <Input type="select" name="chartType" id="chartType" onChange={this.handleChartTypeChange} value={this.state.chartType}>
+                    <option value="AreaChart">AreaChart</option>
 					<option value="CandleStickChart">CandleStickChart</option>
                     <option value="LineAndScatterChartGrid">LineAndScatterChartGrid</option>
-                    <option value="DiscontinuousCandle">DiscontinuousCandle</option>
-				</select>
+                    <option value="DiscontinuousCandle">DiscontinuousCandle</option>        
+                </Input>
+                </Col>
+            </FormGroup>
                 {chart}
-                {console.log(`chart in ${chart}`)}
 			</div>
 		);
 	}
 }
 
 ChartTypeChooser.propTypes = {
+    tickerSymbol: PropTypes.string.isRequired,
 	chartType: PropTypes.oneOf(["AreaChart", "CandleStickChart", "LineAndScatterChartGrid"]),
 	//children: PropTypes.func.isRequired,
 	//style: PropTypes.object.isRequired,

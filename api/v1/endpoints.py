@@ -16,9 +16,7 @@ urlpatterns = [
 
 
 urlpatterns = [
-    path('tickticker/<str:tickerSymbol>', ticks_list),
-    path('^ ^ticker/<str:tickerSymbol>/ticks', ticks_list,
-        name='ticks-for-ticker'),
+    path('ticksByTicker/<str:tickerSymbol>', ticks_list, name='ticks-for-ticker'),
     url("^", include(router.urls)),
 ]
 
