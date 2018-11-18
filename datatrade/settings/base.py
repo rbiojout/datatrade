@@ -219,7 +219,7 @@ WSGI_APPLICATION = 'datatrade.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'datatrade',
+        'NAME': config('DATABASE_NAME', default='datatrade'),
         'USER': config('DATABASE_USER', default='datatrade'),
         'PASSWORD': config('DATABASE_PASSORD', default='datatrade'),
         'HOST': config('DATABASE_HOST', default='localhost'),
