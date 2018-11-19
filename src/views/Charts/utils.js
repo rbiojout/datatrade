@@ -25,7 +25,7 @@ export function getDataOld() {
 }
 
 export function getData() {
-    return fetch(`http://localhost:8000/api/v1/ticksByTicker/AAPL`)
+    return fetch(`/api/v1/ticksByTicker/AAPL`)
       .then(response => response.json())
       .then(data => data.map(parseData(parseDate)))
 }
