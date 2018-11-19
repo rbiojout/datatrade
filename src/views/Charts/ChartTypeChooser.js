@@ -15,7 +15,7 @@ class ChartTypeChooser extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            chartType: this.props.chartType, 
+            chartType: this.props.chartType,
             data: null,
             chart: null
 		};
@@ -27,7 +27,7 @@ class ChartTypeChooser extends Component {
         //})
         this.handleTickerSymbol(this.props.tickerSymbol)
     }
-    
+
     componentDidUpdate(prevProps) {
         if (this.props.tickerSymbol !== prevProps.tickerSymbol) {
             this.handleTickerSymbol(this.props.tickerSymbol)
@@ -35,7 +35,7 @@ class ChartTypeChooser extends Component {
       }
 
     handleTickerSymbol(tickerSymbol) {
-        fetch(`http://localhost:8000/api/v1/ticksByTicker/${tickerSymbol}`)
+        fetch(`/api/v1/ticksByTicker/${tickerSymbol}`)
             .then(response => response.json())
             .then(data => data.map(parseData(parseDate)))
             .then(data => {
@@ -79,8 +79,8 @@ class ChartTypeChooser extends Component {
                 break;
         }
         return (
-            
-                
+
+
 			<div>
 				<FormGroup row>
                 <Label for="chartType" sm={2}>Chart Type</Label>
@@ -89,7 +89,7 @@ class ChartTypeChooser extends Component {
                     <option value="AreaChart">AreaChart</option>
 					<option value="CandleStickChart">CandleStickChart</option>
                     <option value="LineAndScatterChartGrid">LineAndScatterChartGrid</option>
-                    <option value="DiscontinuousCandle">DiscontinuousCandle</option>        
+                    <option value="DiscontinuousCandle">DiscontinuousCandle</option>
                 </Input>
                 </Col>
             </FormGroup>
