@@ -60,7 +60,7 @@ export function invalidateTicker(tickerSymbol) {
 export function fetchTickers() {
   return dispatch => {
     dispatch(requestTickers())
-    return fetch('http://localhost:8000/api/v1/tickers.json')
+    return fetch('/api/v1/tickers.json')
       .then(response => response.json())
       .then(json => dispatch(receiveTickers(json)))
   }
@@ -115,11 +115,11 @@ function receiveTicks(tickerSymbol, json) {
 export function fetchTicks(tickerSymbol) {
   return dispatch => {
     dispatch(requestTicks(tickerSymbol))
-    return fetch(`http://localhost:8000/api/v1/ticksByTicker/${tickerSymbol}`)
+    return fetch(`/api/v1/ticksByTicker/${tickerSymbol}`)
       .then(response => response.json())
       .then(data => data.map(parseData(parseDate)))
       .then(json => dispatch(receiveTicks(tickerSymbol, json)))
-      
+
   }
 }
 

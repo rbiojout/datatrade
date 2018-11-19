@@ -32,9 +32,8 @@ datatrade/include
 datatrade/lib/
 
 # static files
+static/
 datatrade/static/
-
-# build files
 build/static
 
 

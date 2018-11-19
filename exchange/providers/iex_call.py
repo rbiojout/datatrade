@@ -172,7 +172,7 @@ def import_chart():
 
 def create_tickers(request):
     # clean_db()
-    #available_symbols = build_companies()
+    available_symbols = build_companies()
     #import_earnings()
     import_chart()
     response = "Request finished."
