@@ -2,6 +2,8 @@
 import { tsvParse, csvParse } from  "d3-dsv";
 import { timeParse } from "d3-time-format";
 
+import { API_ROOT } from '../../api-config.js'
+
 export function parseData(parse) {
 	return function(d) {
 		d.date = parse(d.date);
@@ -25,7 +27,7 @@ export function getDataOld() {
 }
 
 export function getData() {
-    return fetch(`/api/v1/ticksByTicker/AAPL`)
+    return fetch(`${API_ROOT}/ticksByTicker/AAPL`)
       .then(response => response.json())
       .then(data => data.map(parseData(parseDate)))
 }

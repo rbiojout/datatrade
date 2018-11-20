@@ -2,6 +2,8 @@ import fetch from 'cross-fetch'
 
 import { timeParse } from "d3-time-format";
 
+import { API_ROOT } from '../api-config.js'
+
 export const REQUEST_TICKS = 'REQUEST_TICKS'
 export const RECEIVE_TICKS = 'RECEIVE_TICKS'
 export const REQUEST_TICKERS = 'REQUEST_TICKERS'
@@ -60,7 +62,7 @@ export function invalidateTicker(tickerSymbol) {
 export function fetchTickers() {
   return dispatch => {
     dispatch(requestTickers())
-    return fetch('/api/v1/tickers.json')
+    return fetch(`${API_ROOT}/tickers.json`)
       .then(response => response.json())
       .then(json => dispatch(receiveTickers(json)))
   }
@@ -115,7 +117,7 @@ function receiveTicks(tickerSymbol, json) {
 export function fetchTicks(tickerSymbol) {
   return dispatch => {
     dispatch(requestTicks(tickerSymbol))
-    return fetch(`/api/v1/ticksByTicker/${tickerSymbol}`)
+    return fetch(`${API_ROOT}/ticksByTicker/${tickerSymbol}`)
       .then(response => response.json())
       .then(data => data.map(parseData(parseDate)))
       .then(json => dispatch(receiveTicks(tickerSymbol, json)))

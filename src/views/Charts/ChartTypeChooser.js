@@ -10,6 +10,7 @@ import { FormGroup, Label, Col, Input } from 'reactstrap';
 import { fetchTicks } from '../../actions/tickers';
 
 import { getData, parseDate, parseData } from "./utils"
+import { API_ROOT } from '../../api-config.js'
 
 class ChartTypeChooser extends Component {
 	constructor(props) {
@@ -35,7 +36,7 @@ class ChartTypeChooser extends Component {
       }
 
     handleTickerSymbol(tickerSymbol) {
-        fetch(`/api/v1/ticksByTicker/${tickerSymbol}`)
+        fetch(`${API_ROOT}/ticksByTicker/${tickerSymbol}`)
             .then(response => response.json())
             .then(data => data.map(parseData(parseDate)))
             .then(data => {
