@@ -1,3 +1,9 @@
+language: python
+
+before_script:
+  - psql -c "CREATE DATABASE datatrade;" -U postgres
+  - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
+
 matrix:
   include:
     - language: python
