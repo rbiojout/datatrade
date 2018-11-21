@@ -20,11 +20,11 @@ from django.urls import include, path
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('company/', include('company.urls')),
-    path('exchange/', include('exchange.urls')),
-    path('simulation', include('simulation.urls')),
+    path('company/', include('datatrade.company.urls')),
+    path('exchange/', include('datatrade.exchange.urls')),
+    path('simulation', include('datatrade.simulation.urls')),
     path('admin/', admin.site.urls),
-    path('api/', include('api.v1.urls')),
+    path('api/', include('datatrade.api.v1.urls')),
     url('reference/', TemplateView.as_view(template_name="reference.html")),
     url('app/', TemplateView.as_view(template_name="app.html")),
 ]

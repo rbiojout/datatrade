@@ -8,7 +8,7 @@ import {
   INVALIDATE_TICKER
 } from '../actions/tickers'
 
-function selectedTicker(state = "AAPL", action) {
+function selectedTicker(state = null, action) {
   switch (action.type) {
     case SELECT_TICKER:
       return action.tickerSymbol

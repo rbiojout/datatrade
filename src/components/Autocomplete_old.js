@@ -3,7 +3,32 @@
 
 import React, { Component, Fragment } from 'react';
 import PropTypes from "prop-types";
-import {Typeahead} from 'react-bootstrap-typeahead';
+
+import {
+    Badge,
+    Button,
+    ButtonDropdown,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    Col,
+    Collapse,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    Fade,
+    Form,
+    FormGroup,
+    FormText,
+    FormFeedback,
+    Input,
+    InputGroup,
+    InputGroupAddon,
+    InputGroupText,
+    Label,
+    Row,
+  } from 'reactstrap';
 
 
 class Autocomplete extends Component {
@@ -30,7 +55,6 @@ class Autocomplete extends Component {
       };
     }
   
-    /*
     // Event fired when the input value is changed
     onChange = e => {
       const { suggestions } = this.props;
@@ -93,22 +117,66 @@ class Autocomplete extends Component {
         this.setState({ activeSuggestion: activeSuggestion + 1 });
       }
     };
-  */
+  
     render() {
-    
+      const {
+        onChange,
+        onClick,
+        onKeyDown,
+        state: {
+          activeSuggestion,
+          filteredSuggestions,
+          showSuggestions,
+          userInput
+        }
+      } = this;
+  
+      let suggestionsListComponent;
+  
+      if (showSuggestions && userInput) {
+        if (filteredSuggestions.length) {
+          suggestionsListComponent = (
+            <ul class="suggestions">
+              {filteredSuggestions.map((suggestion, index) => {
+                let className;
+  
+                // Flag the active suggestion with a class
+                if (index === activeSuggestion) {
+                  className = "suggestion-active";
+                }
+  
+                return (
+                  <li
+                    className={className}
+                    key={suggestion}
+                    onClick={onClick}
+                  >
+                    {suggestion}
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        } else {
+          suggestionsListComponent = (
+            <div class="no-suggestions">
+              <em>No suggestions, you're on your own!</em>
+            </div>
+          );
+        }
+      }
   
       return (
         <Fragment>
-          <h1>Choose</h1>
-          <Typeahead
-            labelKey="name"
-            multiple={false}
-            options={this.props.options}
-            placeholder="Choose a state..."
+          <input
+            type="text"
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+            value={userInput}
           />
+          {suggestionsListComponent}
         </Fragment>
       );
-
     }
   }
 

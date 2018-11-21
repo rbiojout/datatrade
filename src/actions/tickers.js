@@ -59,7 +59,7 @@ export function invalidateTicker(tickerSymbol) {
   }
 }
 
-export function fetchTickers() {
+function fetchTickers() {
   return dispatch => {
     dispatch(requestTickers())
     return fetch(`${API_ROOT}/tickers.json`)
@@ -127,10 +127,10 @@ export function fetchTicks(tickerSymbol) {
 
 
 function shouldFetchTicks(state, tickerSymbol) {
-  if (!state.ticksByticker){
+  if (!state.ticksByTicker){
     return true
   }
-  const ticks = state.ticksByticker[tickerSymbol]
+  const ticks = state.ticksByTicker[tickerSymbol]
   if (!ticks) {
     return true
   } else if (ticks.isFetching) {

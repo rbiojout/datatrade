@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
 import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
 import { CustomTooltips } from '../../utils/custom-tooltips';
-import { ChartComponent } from './ChartComponent';
-import { ChartTypeChooser} from './ChartTypeChooser';
+import { ChartTypeChooser} from '../../components/stockcharts/ChartTypeChooser';
 
 const line = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],

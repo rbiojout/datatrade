@@ -16,9 +16,9 @@ import { DefaultLayout } from './containers';
 // import { renderRoutes } from 'react-router-config';
 
 /* eslint-disable no-underscore-dangle */
-let store = createStore(dataTradeApp,
+const store = configureStore();
+//let store = createStore(dataTradeApp,
   //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
 /* eslint-enable */
 
 class AppReference extends Component {

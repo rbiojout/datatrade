@@ -1,42 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from "prop-types";
-import { tickers }  from '../../actions';
-import {
-  selectTicker,
-  fetchTicksIfNeeded,
-  invalidateTicker
-} from '../../actions/tickers'
 
 import {
-  Badge,
-  Button,
-  ButtonDropdown,
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Col,
-  Collapse,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Fade,
-  Form,
-  FormGroup,
-  FormText,
-  FormFeedback,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Label,
   Row,
 } from 'reactstrap';
 
-import TickerSelector from '../../components/TickerSelector';
-import Autocomplete from '../../components/Autocomplete';
 import TickerChooser from '../../containers/TickerChooser.js';
-import Tester from '../../components/Tester';
 
 const fixture = {
   tickers: [{"id":5572,"symbol":"A","company":8899,"exchange":3},{"id":5573,"symbol":"AA","company":8900,"exchange":3},{"id":5574,"symbol":"AABA","company":8901,"exchange":4},{"id":5575,"symbol":"AAC","company":8902,"exchange":3},{"id":5576,"symbol":"AAL","company":8903,"exchange":4},{"id":5577,"symbol":"AAMC","company":8904,"exchange":5}],
@@ -162,23 +135,7 @@ class Data extends Component {
           </CardHeader>
           <CardBody>
             <Col >
-              <Autocomplete suggestions={[
-                  "Alligator",
-                  "Bask",
-                  "Crocodilian",
-                  "Death Roll",
-                  "Eggs",
-                  "Egg",
-                  "Jaws",
-                  "Reptile",
-                  "Solitary",
-                  "Tail",
-                  "Wetlands"
-                ]}/>
               <TickerChooser />
-    
-              <TickerSelector options={fixture['tickers']} />
-              <Ticks ticks={fixture['ticks']} />
             </Col>
           </CardBody>
         </Card>

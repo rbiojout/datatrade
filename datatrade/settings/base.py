@@ -96,10 +96,11 @@ THIRD_PARTY_APPS = [
     'webpack_loader',
 ]
 LOCAL_APPS = [
-    'users.apps.UsersAppConfig',
-    'exchange.apps.ExchangeConfig',
-    'company.apps.CompanyConfig',
-    'simulation.apps.SimulationConfig',
+    'datatrade.users.apps.UsersAppConfig',
+    'datatrade.api.v1.apps.ApiAppConfig',
+    'datatrade.exchange.apps.ExchangeConfig',
+    'datatrade.company.apps.CompanyConfig',
+    'datatrade.simulation.apps.SimulationConfig',
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -253,7 +254,7 @@ MANAGERS = ADMINS
 
 # Celery
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ['taskapp.celery.CeleryAppConfig']
+INSTALLED_APPS += ['datatrade.taskapp.celery.CeleryAppConfig']
 if USE_TZ:
     # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-timezone
     CELERY_TIMEZONE = TIME_ZONE
