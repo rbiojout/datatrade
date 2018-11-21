@@ -4,9 +4,7 @@ services:
   - postgresql
 
 before_install:
-  - printf |
-            "@fortawesome:registry=https://npm.fontawesome.com/
-            //npm.fontawesome.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
+  - printf "@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
 
 before_script:
   - psql -c "CREATE DATABASE datatrade;" -U postgres
