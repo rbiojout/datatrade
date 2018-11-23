@@ -3,15 +3,18 @@ from django.db import models
 from datatrade.exchange.models import Ticker
 
 
-class Simulation(models.Model):
-    start_date = models.DateField()
-    end_date = models.DateField(blank=True, null=True)
-    tickers = models.ManyToManyField(Ticker, through='WeightSimulation')
+class Portfolio(models.Model):
+    name = models.CharField(max_length=200)
+    tickers = models.ManyToManyField(Ticker, through='WeightPortfolio')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class WeightSimulation(models.Model):
-    simulation = models.ForeignKey(Simulation, on_delete=models.CASCADE)
-    ticker = models.ForeignKey(Ticker, on_delete=models.CASCADE)
-    weight = models.IntegerField(default=1)
+    class Meta:
+        ordering = ['-id']
+
+class WeightPortfolio(models.Model):
+    portfolio = models.ForeignKey(Portfolio, related_name='weight_portfolio', on_delete=models.CASCADE)
+    ticker = models.ForeignKey(Ticker, related_name='weight_portfolio', on_delete=models.CASCADE)
+    weight = models.PositiveIntegerField(default=1)
+

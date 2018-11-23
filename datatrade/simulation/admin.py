@@ -1,11 +1,20 @@
 from django.contrib import admin
 from django.db.models import Count
 
-from .models import Simulation
+from .models import Portfolio, WeightPortfolio
 
-@admin.register(Simulation)
-class SimulationAdmin(admin.ModelAdmin):
-    list_display = ("start_date","end_date","ticker_count",)
+
+class WeightPortfolioInline(admin.TabularInline):
+    model = WeightPortfolio
+    extra = 1 # how many rows to show
+
+
+
+
+@admin.register(Portfolio)
+class PortfolioAdmin(admin.ModelAdmin):
+    inlines = (WeightPortfolioInline,)
+    list_display = ("name","ticker_count",)
     search_fields = ["tickers",]
     autocomplete_fields = ['tickers',]
 

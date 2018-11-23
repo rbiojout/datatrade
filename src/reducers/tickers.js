@@ -5,22 +5,14 @@ import {
   REQUEST_TICKERS,
   RECEIVE_TICKERS,
   SELECT_TICKER,
-  INVALIDATE_TICKER
 } from '../actions/tickers'
 
-function selectedTicker(state = null, action) {
-  switch (action.type) {
-    case SELECT_TICKER:
-      return action.tickerSymbol
-    default:
-      return state
-  }
-}
 
 function tickers(
   state = {
     isFetching: false,
-    items: []
+    items: [],
+    selected: null
   },
   action
 ) {
@@ -34,6 +26,10 @@ function tickers(
         isFetching: false,
         items: action.tickers,
         lastUpdated: action.receivedAt
+      })
+    case SELECT_TICKER:
+      return Object.assign({}, state, {
+        selected: action.tickerSymbol,
       })
     default:
       return state
@@ -49,10 +45,6 @@ function ticks(
   action
 ) {
   switch (action.type) {
-    case INVALIDATE_TICKER:
-      return Object.assign({}, state, {
-        didInvalidate: true
-      })
     case REQUEST_TICKS:
       return Object.assign({}, state, {
         isFetching: true,
@@ -65,6 +57,7 @@ function ticks(
         items: action.items,
         lastUpdated: action.receivedAt
       })
+      break;
     default:
       return state
   }
@@ -72,7 +65,6 @@ function ticks(
 
 function ticksByTicker(state = {}, action) {
   switch (action.type) {
-    case INVALIDATE_TICKER:
     case REQUEST_TICKS:
     case RECEIVE_TICKS:
       return Object.assign({}, state, {
@@ -85,8 +77,7 @@ function ticksByTicker(state = {}, action) {
 
 const tickerReducers = combineReducers({
   tickers,
-  selectedTicker,
   ticksByTicker
 })
 
-export {tickers, selectedTicker, ticksByTicker};
+export {tickers, ticksByTicker};

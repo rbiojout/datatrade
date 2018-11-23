@@ -12,15 +12,14 @@ class TickerSelector extends Component {
     
     render() {
       const { selectedTicker, onChange, options } = this.props
-  
+      
       var selected = options.find(function(element) {
         return element['symbol'] == selectedTicker;
       });
+      console.log("props tickerselector", this.props)
       
       return (
-        <FormGroup row>
-          <Label for="tickerSelector" sm={2}>Ticker</Label>
-          <Col sm={10}>
+        <FormGroup>
           <Typeahead
             labelKey="symbol"
             multiple={false}
@@ -39,11 +38,16 @@ class TickerSelector extends Component {
             onChange={selectedItems => onChange(selectedItems[0])} 
             selected = {(selectedTicker)?[selectedTicker]:[]}
           />
-          </Col>
         </FormGroup>
         
       )
     }
   }
 
-  export default TickerSelector;
+
+TickerSelector.propTypes = {
+  options: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
+};
+
+export default TickerSelector;

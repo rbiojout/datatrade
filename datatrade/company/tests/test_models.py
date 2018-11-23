@@ -7,7 +7,7 @@ class CompanyTestCase(TestCase):
       Company.objects.create(name="Company1", symbol="COMP1")
       Company.objects.create(name="Company2", symbol="COMP2")
 
-    def test_animals_can_speak(self):
+    def test_companies_have_symbols(self):
         """Companies are correctly identified"""
         comp1 = Company.objects.get(name="Company1")
         comp2 = Company.objects.get(name="Company2")

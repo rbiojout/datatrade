@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
 import { Card, CardBody, CardColumns, CardHeader } from 'reactstrap';
 import { CustomTooltips } from '../../utils/custom-tooltips';
-import { ChartTypeChooser} from '../../components/stockcharts/ChartTypeChooser';
+import TickerChooser from '../../containers/TickerChooser';
 
 const line = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -156,7 +156,9 @@ class Charts extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <ChartTypeChooser tickerSymbol='AAPL'/>
+        <div>
+        <TickerChooser />
+        </div>
         <CardColumns className="cols-2">
           <Card>
             <CardHeader>

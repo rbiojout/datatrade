@@ -26,7 +26,7 @@ import { CustomTooltips } from '../../utils/custom-tooltips';
 import { getStyle, hexToRgba } from '../../utils/coreui';
 //import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 
-import ExperimentList from '../../components/ExperimentList';
+import PortfolioList from '../../containers/PortfolioList';
 
 const brandPrimary = getStyle('--primary')
 const brandSuccess = getStyle('--success')
@@ -486,7 +486,7 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Row>
           <Col >
-            <ExperimentList/>
+            <PortfolioList/>
           </Col>
         </Row>
         <Row>

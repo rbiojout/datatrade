@@ -27,6 +27,7 @@ urlpatterns = [
     path('api/', include('datatrade.api.v1.urls')),
     url('reference/', TemplateView.as_view(template_name="reference.html")),
     url('app/', TemplateView.as_view(template_name="app.html")),
+    path('', TemplateView.as_view(template_name="app.html"), name='index'),
 ]
 
 

@@ -1,5 +1,5 @@
-import * as experiments from "./experiments";
+import * as portfolios from "./portfolios";
 import * as templates from "./templates";
 import * as tickers from "./tickers";
 
-export { experiments, templates, tickers }
+export { portfolios, templates, tickers }

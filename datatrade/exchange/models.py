@@ -75,6 +75,11 @@ class TickManager(models.Manager):
 
 TICK_COLUMNS = ['date', 'open', 'high', 'low', 'close', 'volume', 'open_adj', 'high_adj', 'low_adj', 'close_adj', 'volume_adj', 'dividend', 'splits']
 
+# used for fixtures
+#class TickManager(models.Manager):
+#    def get_queryset(self):
+#        return super().get_queryset().filter(company__symbol='AAPL')
+
 class Tick(models.Model):
     #objects = TickManager()
     id = models.BigAutoField(primary_key=True)

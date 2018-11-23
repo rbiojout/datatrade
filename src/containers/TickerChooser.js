@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { timeParse, timeFormat } from "d3-time-format";
 import {
-    selectTicker,
-    fetchTickersIfNeeded,
-    fetchTicksIfNeeded
-} from '../actions/tickers';
+    tickers
+} from '../actions';
   
 import TickerSelector from '../components/TickerSelector';
 
@@ -34,36 +32,21 @@ class TickerChooser extends Component {
     super(props)
     this.handleChange = this.handleChange.bind(this)
     this.handleRefreshClick = this.handleRefreshClick.bind(this)
-    this.state = {
-        tickers: [],
-        isLoading: true,
-        data: [],
-      };
-    
   }
+
+  /*
   componentDidMount() {
     const { dispatch, selectedTicker } = this.props
     this.props.dispatch(fetchTickersIfNeeded())
     this.props.dispatch(fetchTicksIfNeeded(this.props.selectedTicker))
-    /*
-    getData().then(data => {
-        this.setState({ data })
-    })
-    */
   }
+  */
 
   componentDidMount() {
-      this.props.dispatch(fetchTickersIfNeeded())
+      this.props.fetchTickersIfNeeded();
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.selectTicker !== prevProps.selectTicker) {
-      const { dispatch, selectTicker } = this.props
-      dispatch(fetchTickersIfNeeded())
-    }
-  }
-
-  handleChange(nextTicker) {
+  handleChange = (nextTicker) => {
     if (!nextTicker){return;}
     if (typeof nextTicker == 'object') {
       // if we have an array we take the first
@@ -75,22 +58,18 @@ class TickerChooser extends Component {
         nextTicker = nextTicker['symbol']
       }
     }
-    this.props.dispatch(selectTicker(nextTicker))
-    this.props.dispatch(fetchTicksIfNeeded(nextTicker))
+    this.props.selectTicker(nextTicker)
+    this.props.fetchTicksIfNeeded(nextTicker)
   }
   handleRefreshClick(e) {
     e.preventDefault()
 
     const { dispatch, selectedTicker } = this.props
-    dispatch(fetchTickersIfNeeded())
+    this.props.fetchTickersIfNeeded()
   }
 
   render() {
-      const {selectedTicker, isFetching, tickers, ticks} = this.props
-    //const { selectedTicker, items, isFetching, lastUpdated } = this.props
-    //if (this.state.isLoading) {
-    //    return <p>Loading ...</p>;
-    //  }
+    const {selectedTicker, isFetching, tickers, ticks, fetchTickersIfNeeded, selectTicker, fetchTicksIfNeeded} = this.props
     if (ticks.length ==0 ) {
       return (
       <div>
@@ -110,31 +89,30 @@ class TickerChooser extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     fetchTickersIfNeeded: () => {
-      dispatch(fetchTickersIfNeeded)
+      dispatch(tickers.fetchTickersIfNeeded())
     },
-    fetchTickersIfNeeded: () => {
-      dispatch(selectTicker(ownProps.tickerSymbol))
+    selectTicker: (tickerSymbol) => {
+      dispatch(tickers.selectTicker(tickerSymbol))
     },
-    fetchTicksIfNeeded: tickerSymbol => {
-      dispatch(fetchTicksIfNeeded(ownProps.tickerSymbol))
+    fetchTicksIfNeeded: (tickerSymbol) => {
+      dispatch(tickers.fetchTicksIfNeeded(tickerSymbol))
     }
   }
 }
 
-mapDispatchToProps()
 
 const mapStateToProps = state => {
-  const { selectedTicker, tickers, ticksByTicker } = state
+  const { tickers, ticksByTicker } = state;
+  const selectedTicker = tickers.selected;
   const { isFetching, lastUpdated, items } = ticksByTicker[selectedTicker] || {
                                                                                 isFetching: true,
-                                                                                items: []
+                                                                                items: [],
                                                                               }
- 
   return {
-      selectedTicker: selectedTicker,
+      selectedTicker: state.tickers.selected,
       tickers: state.tickers.items,
       isFetching: state.tickers.isFetching,
       ticks: items
@@ -143,4 +121,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps)(TickerChooser)
+export default connect(mapStateToProps, mapDispatchToProps)(TickerChooser)

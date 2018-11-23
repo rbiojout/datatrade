@@ -1,14 +1,13 @@
 import { combineReducers } from 'redux';
-import experiments from "./experiments";
+import portfolios from "./portfolios";
 import templates from './templates';
-import {ticksByTicker, tickers, selectedTicker} from './tickers';
+import {ticksByTicker, tickers} from './tickers';
 
 const rootReducer = combineReducers({
-  experiments,
+  portfolios,
   templates,
   tickers, 
   ticksByTicker,
-  selectedTicker
 })
 
 export default rootReducer ;

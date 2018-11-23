@@ -9,7 +9,6 @@ export const RECEIVE_TICKS = 'RECEIVE_TICKS'
 export const REQUEST_TICKERS = 'REQUEST_TICKERS'
 export const RECEIVE_TICKERS = 'RECEIVE_TICKERS'
 export const SELECT_TICKER = 'SELECT_TICKER'
-export const INVALIDATE_TICKER = 'INVALIDATE_TICKER'
 
 
 const parseDate = timeParse("%Y-%m-%d");
@@ -52,17 +51,11 @@ export function selectTicker(tickerSymbol) {
   }
 }
 
-export function invalidateTicker(tickerSymbol) {
-  return {
-    type: INVALIDATE_TICKER,
-    tickerSymbol
-  }
-}
 
 function fetchTickers() {
   return dispatch => {
     dispatch(requestTickers())
-    return fetch(`${API_ROOT}/tickers.json`)
+    return fetch(`${API_ROOT}/tickers/`)
       .then(response => response.json())
       .then(json => dispatch(receiveTickers(json)))
   }
@@ -114,10 +107,10 @@ function receiveTicks(tickerSymbol, json) {
 }
 
 
-export function fetchTicks(tickerSymbol) {
+function fetchTicks(tickerSymbol) {
   return dispatch => {
     dispatch(requestTicks(tickerSymbol))
-    return fetch(`${API_ROOT}/ticksByTicker/${tickerSymbol}`)
+    return fetch(`${API_ROOT}/tickers/${tickerSymbol}/ticks/`)
       .then(response => response.json())
       .then(data => data.map(parseData(parseDate)))
       .then(json => dispatch(receiveTicks(tickerSymbol, json)))

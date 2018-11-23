@@ -220,9 +220,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # FIXTURES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#fixture-dirs
-FIXTURE_DIRS = (
-    os.path.join(BASE_DIR, 'fixtures')
-)
+FIXTURE_DIRS = [os.path.join(BASE_DIR, 'fixtures')]
+
 
 # SECURITY
 # ------------------------------------------------------------------------------

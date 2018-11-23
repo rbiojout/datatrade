@@ -79,7 +79,12 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
 )
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (), # no authentication classes
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny', # will allow unrestricted access
+    ),
+}
 
 LOGGING = {
     'version': 1,
