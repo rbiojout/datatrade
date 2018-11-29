@@ -49,7 +49,7 @@ class WeightPortfolioList extends Component {
               {portfolioWeightPortfolios.map(weightPortfolio => (
                 <tr key={`weightPortfolio_${weightPortfolio.id}`}>
                   <td>{weightPortfolio.ticker}</td>
-                  <td><Input type='text' id={`weightPortfolio_weight_${weightPortfolio.id}`} value={weightPortfolio.weight} onChange={() => this.onWeightChange()}/></td>
+                  <td><Input type='text'  value={weightPortfolio.weight} onChange={this.onWeightChange}/></td>
                   <td><Button color='danger' size="sm" onClick={() => this.deleteWeightPortfolio(portfolioId, weightPortfolio.id)}>delete</Button></td>
               </tr>
               ))}
