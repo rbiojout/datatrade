@@ -1,7 +1,7 @@
 language: python
 
 services:
-  - postgresql
+  - postgresql: "10.5"
 
 before_install:
   - printf "@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
