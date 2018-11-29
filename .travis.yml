@@ -5,6 +5,10 @@ services:
 
 addons:
   postgresql: "10.5"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
 
 before_install:
   - printf "@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
