@@ -18,7 +18,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 /* eslint-disable no-underscore-dangle */
 let store = createStore(dataTradeApp, composeEnhancers(
-  //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     applyMiddleware(thunkMiddleware)
   ));
 /* eslint-enable */

@@ -7,9 +7,6 @@ import { curveMonotoneX } from "d3-shape";
 
 import { FormGroup, Label, Col, Input } from 'reactstrap';
 
-import { parseDate, parseData} from './utils';
-import { API_ROOT } from '../../api-config.js';
-
 const chartOptions = { 
     "CandleStickChart":"Candle Stick Chart",
     "AreaChart":"Area Chart",
@@ -26,27 +23,8 @@ class ChartTypeChooser extends Component {
 		};
 		this.handleChartTypeChange = this.handleChartTypeChange.bind(this);
     }
-    /*
-    componentDidMount() {
-        this.handleTickerSymbol(this.props.tickerSymbol)
-    }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.tickerSymbol !== prevProps.tickerSymbol) {
-            this.handleTickerSymbol(this.props.tickerSymbol)
-        }
-      }
-
-    handleTickerSymbol(tickerSymbol) {
-        fetch(`${API_ROOT}/ticksByTicker/${tickerSymbol}`)
-            .then(response => response.json())
-            .then(data => data.map(parseData(parseDate)))
-            .then(data => {
-                this.setState({ data: data }); })
-    }
-    */
-
-	handleChartTypeChange(e) {
+    handleChartTypeChange(e) {
         let serieChart = this.selectChartType(e.target.value);
         this.setState({
             chartType: e.target.value,

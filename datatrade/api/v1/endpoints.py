@@ -6,8 +6,8 @@ from rest_framework import routers
 from datatrade.api.v1.api import PortfolioViewSet, TickerViewSet, ticks_list
 
 router = routers.DefaultRouter()
-router.register('portfolios', PortfolioViewSet)
-router.register('tickers', TickerViewSet)
+router.register(r'portfolios', PortfolioViewSet)
+router.register(r'tickers', TickerViewSet)
 
 
 urlpatterns = [

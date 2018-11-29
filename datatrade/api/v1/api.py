@@ -26,46 +26,13 @@ class PortfolioViewSet(viewsets.ModelViewSet):
         portfolio = Portfolio()
         serializer = PortfolioSerializer(data=request.data)
         if serializer.is_valid():
-
             portfolio.name=serializer.data['name']
             portfolio.save()
             # send back the result of the persisted object
             serializer = PortfolioSerializer(portfolio)
-            return Response(serializer.data)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors,
-                            status=status.HTTP_400_BAD_REQUEST)
-
-    @action(detail=True, methods=['post'])
-    def add_ticker(self, request, *args, **kwargs):
-        permission_classes = (AllowAny,)
-        portfolio = self.get_object()
-        portfolio_id = portfolio.id
-        ticker = Ticker.objects.get(symbol=request.data['ticker'])
-        weight = request.data['weight']
-        data = {'portfolio': portfolio_id, 'ticker': ticker, 'weight': weight}
-
-        serializer = WeightPortfolioSerializer(data=data)
-        if serializer.is_valid():
-            weightPortfolio = WeightPortfolio(portfolio= portfolio, ticker= ticker, weight= weight)
-            weightPortfolio.save()
-            # send back the result of the persisted object
-            portfolio = Portfolio.objects.get(id = portfolio_id)
-            serializer = PortfolioSerializer(portfolio)
-            return Response(serializer.data)
-        else:
-            return Response(serializer.errors,
-                            status=status.HTTP_400_BAD_REQUEST)
-
-    @action(detail=True, methods=['delete'])
-    def del_ticker(self, request, *args, **kwargs):
-        permission_classes = (AllowAny,)
-        try:
-            weightPortfolio = WeightPortfolio.objects.get(id=request.data['id'])
-            weightPortfolio.delete()
-            return Response({'status':'ok'})
-        except Exception as e:
-            return Response({'status':'error'},
                             status=status.HTTP_400_BAD_REQUEST)
 
     def destroy(self, request, pk=None):
@@ -75,6 +42,74 @@ class PortfolioViewSet(viewsets.ModelViewSet):
         portfolio.delete()
         return Response()
 
+
+    @action(detail=True, methods=['get'])
+    def weight_portfolios(self, request, *args, **kwargs):
+        permission_classes = (AllowAny,)
+        portfolio = self.get_object()
+        portfolio_id = portfolio.id
+        portfolio = Portfolio.objects.get(id=portfolio_id)
+        weightPortfolios = WeightPortfolio.objects.filter(portfolio=portfolio).all()
+        serializer = WeightPortfolioSerializer(weightPortfolios, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @action(detail=True, methods=['post'])
+    def add_ticker(self, request, *args, **kwargs):
+        permission_classes = (AllowAny,)
+        portfolio = self.get_object()
+        portfolio_id = portfolio.id
+        portfolio = Portfolio.objects.get(id=portfolio_id)
+        ticker = Ticker.objects.get(symbol=request.data['ticker'])
+        weight = request.data['weight']
+        # test if existing weight
+        existingWeight = WeightPortfolio.objects.filter(portfolio=portfolio, ticker=ticker).all()
+        if (len(existingWeight)>0):
+            serializer = WeightPortfolioSerializer(existingWeight[0], many=False)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+        data = {'portfolio': portfolio_id, 'ticker': ticker, 'weight': weight}
+        serializer = WeightPortfolioSerializer(data=data)
+        if serializer.is_valid():
+            weightPortfolio = WeightPortfolio(portfolio= portfolio, ticker= ticker, weight= weight)
+            weightPortfolio.save()
+            # send back the result of the persisted object
+            serializer = WeightPortfolioSerializer(weightPortfolio)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['patch'])
+    def update_ticker(self, request, *args, **kwargs):
+        permission_classes = (AllowAny,)
+        portfolio = self.get_object()
+        try:
+            weightPortfolio = WeightPortfolio.objects.get(id=request.data['id'])
+            # @TODO check if object is linked to portfolio
+            if (weightPortfolio.portfolio.id != portfolio.id):
+                return Response({}, status=status.HTTP_403_FORBIDDEN)
+            weightPortfolio.weight = request.data.weight
+            weightPortfolio.save()
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+        except Exception as e:
+            return Response({'status': 'error'},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+
+    @action(detail=True, methods=['delete'])
+    def del_ticker(self, request, *args, **kwargs):
+        permission_classes = (AllowAny,)
+        portfolio = self.get_object()
+        try:
+            weightPortfolio = WeightPortfolio.objects.get(id=request.data['id'])
+            # @TODO check if object is linked to portfolio
+            if (weightPortfolio.portfolio.id != portfolio.id):
+                return Response({}, status=status.HTTP_403_FORBIDDEN)
+            weightPortfolio.delete()
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+        except Exception as e:
+            return Response({'status':'error'},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 class TickerViewSet(viewsets.ModelViewSet):
     # use prefetch to speed-up requests

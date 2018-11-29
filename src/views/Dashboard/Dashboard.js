@@ -485,9 +485,8 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
-          <Col >
-            <PortfolioList/>
-          </Col>
+          <Col  xs="12"><PortfolioList/></Col>
+          
         </Row>
         <Row>
           <Col xs="12" sm="6" lg="3">

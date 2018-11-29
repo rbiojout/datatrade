@@ -2,29 +2,15 @@ import fetch from 'cross-fetch'
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { timeParse, timeFormat } from "d3-time-format";
-import {
-    tickers
-} from '../actions';
+
+import { getResources, getStatus } from 'redux-resource';
+
+import { selectTicker, fetchTickersIfNeeded, fetchTicksIfNeeded } from '../actions/crud_tickers';
   
 import TickerSelector from '../components/TickerSelector';
 
 import { ChartTypeChooser } from '../components/stockcharts/ChartTypeChooser';
 
-function parseData(parse) {
-	return function(d) {
-		d.date = parse(d.date);
-		d.open = +d.open;
-		d.high = +d.high;
-		d.low = +d.low;
-		d.close = +d.close;
-		d.volume = +d.volume;
-
-		return d;
-	};
-}
-
-const parseDate = timeParse("%Y-%m-%d");
 
 
 class TickerChooser extends Component {
@@ -53,13 +39,10 @@ class TickerChooser extends Component {
       if (nextTicker[0]){
         nextTicker = nextTicker[0]
       }
-      // if this is a plain object we select 'symbol'
-      if (nextTicker['symbol']) {
-        nextTicker = nextTicker['symbol']
-      }
     }
-    this.props.selectTicker(nextTicker)
-    this.props.fetchTicksIfNeeded(nextTicker)
+    // if this is a plain object we select 'id' which is necessary for redux-resource
+    this.props.selectTicker(nextTicker.id);
+    this.props.fetchTicksIfNeeded(nextTicker.symbol);
   }
   handleRefreshClick(e) {
     e.preventDefault()
@@ -69,53 +52,72 @@ class TickerChooser extends Component {
   }
 
   render() {
-    const {selectedTicker, isFetching, tickers, ticks, fetchTickersIfNeeded, selectTicker, fetchTicksIfNeeded} = this.props
-    if (ticks.length ==0 ) {
-      return (
-      <div>
-        <h2> </h2>
-        <TickerSelector options={tickers} selectedTicker={selectedTicker} onChange={this.handleChange}/>
-      </div>
-      );
-    }
+    const {tickers, allTickersStatus, ticks, ticksStatus, selectedSymbol, selectedTickerId} = this.props;
+    const {selectTicker, fetchTickersIfNeeded } = this.props;
+    console.log("props TickerChooser ", this.props);
     return (
       <div>
-          <h2>{selectedTicker}</h2>
-        {isFetching?<h2>Loading...</h2>:<TickerSelector options={tickers} selectedTicker={selectedTicker} onChange={this.handleChange}/>}
-        <ChartTypeChooser tickerSymbol={selectedTicker} data={ticks} /> 
+    {allTickersStatus.pending && 'Loading ...'}
+    {allTickersStatus.failed && (
+      <span>
+        There was an error loading .{' '}
+        <button onClick={this.fetchTickersIfNeeded}>Try again.</button>
+      </span>
+    )}
+    {allTickersStatus.succeeded && 
+    <div>
+    <h2>{selectedSymbol}</h2>
+      <TickerSelector options={tickers} selectedTicker={selectedSymbol} onChange={this.handleChange}/>
+      { ticks.length >0 &&
+      <ChartTypeChooser tickerSymbol={selectedSymbol} data={ticks} /> 
+    }
 
       </div>
+    }
+    
+  </div>
     )
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchTickersIfNeeded: () => {
-      dispatch(tickers.fetchTickersIfNeeded())
-    },
-    selectTicker: (tickerSymbol) => {
-      dispatch(tickers.selectTicker(tickerSymbol))
-    },
-    fetchTicksIfNeeded: (tickerSymbol) => {
-      dispatch(tickers.fetchTicksIfNeeded(tickerSymbol))
-    }
-  }
+const mapDispatchToProps =  {
+  selectTicker, 
+  fetchTickersIfNeeded, 
+  fetchTicksIfNeeded, 
 }
 
 
 const mapStateToProps = state => {
-  const { tickers, ticksByTicker } = state;
-  const selectedTicker = tickers.selected;
-  const { isFetching, lastUpdated, items } = ticksByTicker[selectedTicker] || {
-                                                                                isFetching: true,
-                                                                                items: [],
-                                                                              }
+  const selectedTicker = getResources(state.tickers, 'selected');
+  let selectedSymbol = null;
+  let selectedTickerId = null;
+  if (selectedTicker && selectedTicker.length >0 ){
+    selectedSymbol = selectedTicker[0].symbol;
+    selectedTickerId = selectedTicker[0].id;
+  }
+
+  const tickers = getResources(state.tickers, 'allTickers');
+  const allTickersStatus = getStatus(
+    state,
+    'tickers.requests.getAllTickers.status',
+    true
+  );
+  
+  const ticks = getResources(state.ticks, `ticks_${selectedSymbol}`);
+  const ticksStatus = getStatus(
+    state,
+    `tickers.requests.getTicks_${selectedSymbol}.status`,
+    true
+  );
+
+
   return {
-      selectedTicker: state.tickers.selected,
-      tickers: state.tickers.items,
-      isFetching: state.tickers.isFetching,
-      ticks: items
+      tickers,
+      allTickersStatus,
+      ticks,
+      ticksStatus,
+      selectedSymbol,
+      selectedTickerId,
   }
 }
 

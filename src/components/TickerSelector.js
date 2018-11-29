@@ -16,8 +16,7 @@ class TickerSelector extends Component {
       var selected = options.find(function(element) {
         return element['symbol'] == selectedTicker;
       });
-      console.log("props tickerselector", this.props)
-      
+      console.log("props TickerSelector", this.props)
       return (
         <FormGroup>
           <Typeahead

@@ -1,13 +1,20 @@
 import { combineReducers } from 'redux';
-import portfolios from "./portfolios";
+import { resourceReducer } from 'redux-resource';
 import templates from './templates';
-import {ticksByTicker, tickers} from './tickers';
+
+
+const portfolios = resourceReducer('portfolios');
+const tickers = resourceReducer('tickers');
+const ticks = resourceReducer('ticks');
+const weightPortfolios = resourceReducer('weightPortfolios');
+
 
 const rootReducer = combineReducers({
   portfolios,
+  weightPortfolios,
   templates,
   tickers, 
-  ticksByTicker,
+  ticks,
 })
 
 export default rootReducer ;
