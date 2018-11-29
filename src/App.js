@@ -3,9 +3,10 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
-import thunkMiddleware from 'redux-thunk';
-import dataTradeApp from "./reducers";
+//import { createStore, applyMiddleware, compose } from "redux";
+//import thunkMiddleware from 'redux-thunk';
+//import rootReducer from "./reducers";
+import configureStore from './configureStore';
 
 // Containers
 import { DefaultLayout } from './containers';
@@ -14,13 +15,15 @@ import { DefaultLayout } from './containers';
 
 // import { renderRoutes } from 'react-router-config';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 /* eslint-disable no-underscore-dangle */
-let store = createStore(dataTradeApp, composeEnhancers(
+/*let store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunkMiddleware)
   ));
 /* eslint-enable */
+
+const store = configureStore()
 
 class App extends Component {
   render() {

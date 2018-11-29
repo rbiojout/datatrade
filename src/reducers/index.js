@@ -4,9 +4,10 @@ import templates from './templates';
 
 
 const portfolios = resourceReducer('portfolios');
+const weightPortfolios = resourceReducer('weightPortfolios');
+
 const tickers = resourceReducer('tickers');
 const ticks = resourceReducer('ticks');
-const weightPortfolios = resourceReducer('weightPortfolios');
 
 
 const rootReducer = combineReducers({
