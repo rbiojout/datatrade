@@ -1,7 +1,10 @@
 language: python
 
 services:
-  - postgresql: "10.5"
+  - postgresql
+
+addons:
+  postgresql: "10.5"
 
 before_install:
   - printf "@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
@@ -19,7 +22,7 @@ matrix:
   include:
     - language: python
       python:
-        - 3.6
+        - 3.6.5
       install:
         - pip install -r requirements.txt
       script:
